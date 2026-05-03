@@ -332,160 +332,69 @@
     <div class="ornament" aria-hidden="true"></div>
 
     <h1>Help &amp; FAQ</h1>
-    <p class="updated">For BookHaven 1.0 &middot; Last updated: May 3, 2026 &middot; <a href="tr.html">Türkçe</a></p>
+    <p class="updated">For BookHaven 1.0 &middot; Last updated: May 4, 2026 &middot; <a href="tr.html">Türkçe</a></p>
 
     <div class="highlight">
-        <p><strong>BookHaven reads books you already own.</strong> It is not a content store. The questions below are the ones that come up most. If you don't see yours, write to <a href="mailto:bookhavensupport@gmail.com" style="color: var(--cream); border-bottom-color: var(--brass);">bookhavensupport@gmail.com</a> and we'll write back within five business days.</p>
+        <p><strong>BookHaven reads books you already own.</strong> The questions below cover what comes up most. Don't see yours? <a href="mailto:bookhavensupport@gmail.com" style="color: var(--cream); border-bottom-color: var(--brass);">bookhavensupport@gmail.com</a> — we reply within five business days.</p>
     </div>
 
     <div class="toc" aria-label="Table of contents">
         <h3>Contents</h3>
         <ol>
-            <li><a href="#bringing-books">Bringing your books in</a></li>
-            <li><a href="#formats">Which file formats are supported</a></li>
-            <li><a href="#cloud-import">Importing from Dropbox, Google Drive, OneDrive</a></li>
-            <li><a href="#kindle">What about my Kindle library?</a></li>
+            <li><a href="#adding">Adding books</a></li>
+            <li><a href="#formats">Supported formats</a></li>
+            <li><a href="#kindle">Kindle books?</a></li>
             <li><a href="#audiobooks">Audiobooks</a></li>
-            <li><a href="#icloud-sync">iCloud sync (Beta in v1.0)</a></li>
+            <li><a href="#icloud">iCloud sync (Beta)</a></li>
             <li><a href="#purchases">Subscription vs premium rooms</a></li>
             <li><a href="#refunds">Refunds</a></li>
-            <li><a href="#progress">Reading progress &amp; bookmarks</a></li>
-            <li><a href="#havens">Havens, daily goals, streaks</a></li>
-            <li><a href="#accessibility">Accessibility</a></li>
-            <li><a href="#reset">Resetting or removing data</a></li>
-            <li><a href="#privacy-summary">Privacy &amp; what we collect</a></li>
-            <li><a href="#contact">Contacting support</a></li>
+            <li><a href="#privacy">Privacy</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ol>
     </div>
 
-    <h2 id="bringing-books">Bringing your books in</h2>
-    <p>BookHaven is built around your existing library. There are four ways to add books:</p>
+    <h2 id="adding">Adding books</h2>
     <ul>
-        <li><strong>Files app / iCloud Drive.</strong> Open the Files app, find an EPUB, PDF, MOBI, AZW3, FB2, TXT, RTF, M4B, M4A, or MP3, and tap <strong>Share &rsaquo; BookHaven</strong>. Or open BookHaven, tap the <strong>+</strong> button at the top of the haven, and pick the file from the Files browser.</li>
-        <li><strong>AirDrop.</strong> Send the file from another device. iOS will offer BookHaven as a destination.</li>
-        <li><strong>Cloud services.</strong> Connect a Dropbox, Google Drive, or OneDrive account in <strong>Discover &rsaquo; Connect a cloud service</strong>, then browse and import. See the section below for details.</li>
-        <li><strong>Email or web download.</strong> Open the attachment or download in Safari, then tap <strong>Share &rsaquo; BookHaven</strong>.</li>
+        <li><strong>Files / iCloud Drive:</strong> tap <strong>Share &rsaquo; BookHaven</strong>, or open BookHaven and tap <strong>+</strong>.</li>
+        <li><strong>AirDrop</strong> from another device — pick BookHaven as the destination.</li>
+        <li><strong>Cloud services</strong> (Dropbox, Google Drive, OneDrive): connect via <strong>Discover &rsaquo; Connect a cloud service</strong>, then browse and import.</li>
+        <li><strong>Email or Safari downloads:</strong> open the attachment, <strong>Share &rsaquo; BookHaven</strong>.</li>
     </ul>
-    <p>BookHaven includes seven Standard Ebooks classics out of the box (Wuthering Heights, Pride and Prejudice, Dracula, Frankenstein, Sherlock Holmes, Jekyll and Hyde, The War of the Worlds) so you can try the reader immediately. The reader you fall in love with — that's whichever books you bring in.</p>
 
-    <h2 id="formats">Which file formats are supported</h2>
-    <table class="formats">
-        <thead>
-            <tr><th>Kind</th><th>Formats</th><th>Notes</th></tr>
-        </thead>
-        <tbody>
-            <tr><td>Ebook</td><td><code>EPUB</code></td><td>Native rendering via Readium, full reflow, table of contents, fonts, themes</td></tr>
-            <tr><td>Ebook</td><td><code>PDF</code></td><td>Pinch-to-zoom, scroll mode, dark/sepia, search, bookmarks</td></tr>
-            <tr><td>Ebook</td><td><code>MOBI</code>, <code>AZW3</code></td><td>Reflow + table of contents (KF7 and KF8)</td></tr>
-            <tr><td>Ebook</td><td><code>FB2</code>, <code>TXT</code>, <code>RTF</code></td><td>Reflow with paginated viewer</td></tr>
-            <tr><td>Audiobook</td><td><code>M4B</code>, <code>M4A</code></td><td>Embedded chapters, Dolby Atmos via iOS native decoder</td></tr>
-            <tr><td>Audiobook</td><td><code>MP3</code></td><td>Single file or multi-file folders, ID3 chapters, disc-folder layouts</td></tr>
-        </tbody>
-    </table>
-    <p>BookHaven does <em>not</em> read DRM-protected files (Kindle <code>.azw</code>, Audible <code>.aax</code>, Apple Books <code>.epub</code> with FairPlay). The file has to be DRM-free for any reader to open it; this is not a BookHaven limitation.</p>
+    <h2 id="formats">Supported formats</h2>
+    <p>EPUB, PDF, MOBI, AZW3, FB2, TXT, RTF for ebooks. M4B, M4A, MP3 for audiobooks. <em>DRM-protected files don't work</em> — Kindle, Audible, and DRM'd Apple Books need to be DRM-free first.</p>
 
-    <h2 id="cloud-import">Importing from Dropbox, Google Drive, OneDrive</h2>
-    <p>Open <strong>Discover &rsaquo; Connect a cloud service</strong>. Tap one of the three providers; iOS will open Safari for sign-in. After you grant access, you'll be returned to BookHaven with a file picker showing your cloud folders.</p>
-    <p>BookHaven uses OAuth 2.1 with PKCE and stores the access token in your device's keychain only. Disconnect any account at any time via <strong>Settings &rsaquo; Cloud Accounts</strong>; the token is deleted from the keychain immediately.</p>
-    <p class="q">Why is the Google Drive picker different?</p>
-    <p>Google's <em>drive.file</em> permission lets BookHaven see only the files <strong>you explicitly pick</strong> — not your whole Drive. So instead of browsing folders, you'll see Google's standard file picker. Pick a book, BookHaven downloads it. To import again later, pick again.</p>
-    <p class="q">Multi-file MP3 audiobooks?</p>
-    <p>If a folder contains multiple MP3 chapters (with optional CD-1, CD-2 sub-folders, a cover image, an NFO, or a CUE sheet), BookHaven detects the layout, copies all files together, and treats the whole folder as one audiobook with chapter navigation.</p>
-
-    <h2 id="kindle">What about my Kindle library?</h2>
-    <p>Honestly: BookHaven cannot read Kindle's encrypted files directly. Amazon's DRM protects them and we have no way around that.</p>
-    <p>What people typically do is use third-party tools <em>outside</em> the App Store ecosystem to back up their personal Kindle purchases as DRM-free EPUB files, then import those into a reader of their choice (BookHaven, Apple Books, anything else). Whether and how to do that depends on your jurisdiction and personal stance — we can't guide you through it. If you already have DRM-free EPUBs of your library, the Files app or cloud import paths above will pick them up.</p>
+    <h2 id="kindle">My Kindle books?</h2>
+    <p>Amazon's DRM means BookHaven can't read Kindle files directly. If you've got DRM-free EPUBs of books you own, drop them in via the methods above.</p>
 
     <h2 id="audiobooks">Audiobooks</h2>
-    <p class="q">Which audiobook formats?</p>
-    <p>M4B and M4A (the same MP4 container; M4A files just use a different extension), and MP3 — either as a single file or as a folder of multiple files representing chapters. BookHaven also supports Dolby Atmos audiobooks (Enhanced AC-3 / EC-3 with JOC); on AirPods Pro / Max / HomePod / AirPlay 2 endpoints, iOS routes the spatial audio automatically.</p>
-    <p class="q">Where do chapter titles come from?</p>
-    <p>For M4B/M4A, BookHaven reads the embedded chapter track and falls back through several locale paths to find titles (some Audible-encoded files tag chapters with the <code>mis</code> locale; we walk every available locale until we find them). For MP3, we use ID3 chapter tags, the surrounding folder structure, or a CUE sheet if present.</p>
-    <p class="q">Disc-folder audiobooks (CD 1, CD 2…)?</p>
-    <p>Pick any one MP3 in any disc folder. BookHaven detects the layout, copies all discs into a single audiobook, and prefixes filenames so chapters stay in the right order across discs.</p>
-    <p class="q">My audiobook plays but I see no chapters</p>
-    <p>If the file has no embedded chapter information at all, BookHaven plays it straight through. You can still bookmark, set a sleep timer, and resume from the lock-screen.</p>
-    <p class="q">CarPlay support?</p>
-    <p>Coming after launch — not in v1.0.</p>
+    <p>M4B, M4A, MP3 — single files or folders of chapters (including disc-folder layouts like CD 1, CD 2). Dolby Atmos plays in spatial audio on AirPods Pro/Max and HomePod. CarPlay support comes after launch.</p>
 
-    <h2 id="icloud-sync">iCloud sync (Beta in v1.0)</h2>
-    <p>For v1.0, iCloud sync is shipping as <strong>opt-in beta</strong> and is OFF by default. To turn it on:</p>
-    <ul>
-        <li>Open <strong>Settings &rsaquo; iCloud Sync (Beta)</strong> in the app</li>
-        <li>Toggle <strong>Sync with iCloud</strong> on</li>
-        <li>Restart BookHaven</li>
-    </ul>
-    <p>Once on, your library, bookmarks, reading progress, and shelves sync across the Apple devices signed into the same Apple ID. Your data lives in your <em>private</em> iCloud database — Apple's CloudKit — and BookHaven has no servers in this loop.</p>
-    <p>Because cross-device sync depends on each user's particular Apple ID, network conditions, and devices, v1.0 ships sync as opt-in while we gather real-world reports. If you turn it on and hit any issue (a shelf that looks empty on a second device, a bookmark that didn't travel, anything that surprises you), please mail us at <a href="mailto:bookhavensupport@gmail.com">bookhavensupport@gmail.com</a> with what you saw — that helps us flip the default on for v1.1.</p>
-    <p class="q">Can I sync ebook files (the EPUB / PDF bytes) too?</p>
-    <p>Yes — turn on <strong>Sync Ebook Files</strong> in the same panel. This is independent of the master toggle and off by default. Files under 40 MB sync via iCloud's CKAsset; larger files stay local. Audiobook files <strong>never</strong> sync via iCloud — re-import them on the other device from Dropbox, Google Drive, or OneDrive.</p>
-    <p class="q">My iCloud quota is full</p>
-    <p>BookHaven detects iCloud quota errors and shows a banner in <strong>Settings &rsaquo; iCloud Sync (Beta)</strong>. Free up iCloud space at iCloud.com or upgrade iCloud+; sync resumes automatically. The quota error only stops <em>new</em> uploads — your existing synced data stays intact.</p>
+    <h2 id="icloud">iCloud sync (Beta)</h2>
+    <p>Off by default in v1.0. Turn it on in <strong>Settings &rsaquo; iCloud Sync (Beta)</strong> to share library, bookmarks, and progress across your Apple devices. Audiobook files don't sync — re-import them from cloud services on the other device.</p>
 
     <h2 id="purchases">Subscription vs premium rooms</h2>
-    <p>BookHaven has <strong>two independent kinds of purchase</strong>. People sometimes assume one buys the other; it doesn't.</p>
+    <p>Two independent purchase types — buying one does NOT buy the other:</p>
     <ul>
-        <li><strong>Ad-Free Membership</strong> &mdash; a subscription. Removes ads. <em>Does not unlock premium rooms.</em></li>
-        <li><strong>Premium room purchases</strong> &mdash; a one-time purchase per room (The Tower, The Nook, Zen Garden, The Witch's Attic). Unlocks that specific haven forever. <em>Does not remove ads.</em></li>
+        <li><strong>Ad-Free Membership</strong> &mdash; subscription that removes ads. Doesn't unlock rooms.</li>
+        <li><strong>Premium room purchases</strong> &mdash; one-time per room (Tower, Nook, Zen Garden, Witch's Attic). Unlocks the room. Doesn't remove ads.</li>
     </ul>
-    <p>You can have neither, one, the other, or both. The Study is free for everyone, forever. Tip jar IAPs in the Shop send a small thank-you to the developer with no functional change.</p>
-    <p class="q">When does the welcome gift end?</p>
-    <p>Seven days after first launch. During the gift, every haven is unlocked and ads are off. After day seven, you go back to The Study with ads (the free tier). You can subscribe or purchase rooms at any time before, during, or after the gift.</p>
+    <p>The Study is free forever. New users get a 7-day welcome gift: every haven unlocked + ads off.</p>
 
     <h2 id="refunds">Refunds</h2>
-    <p>App Store purchases are refunded by Apple, not by BookHaven. We don't see your payment information and don't process refunds ourselves. To request a refund:</p>
+    <p>App Store refunds are handled by Apple at <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>. If a purchase didn't unlock what you expected, write to us first — most "didn't unlock" confusion is about which axis (subscription vs room) does what.</p>
+
+    <h2 id="privacy">Privacy</h2>
     <ul>
-        <li>Visit <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a></li>
-        <li>Sign in with your Apple ID</li>
-        <li>Find the BookHaven purchase and tap <strong>Report a Problem</strong></li>
+        <li>No servers. Your library and progress live on your device.</li>
+        <li>iCloud sync is private to your Apple ID. We don't see it.</li>
+        <li>Free-tier ads come from Google AdMob. AdMob doesn't receive your reading data.</li>
+        <li>No analytics, no behavioral tracking, no account.</li>
     </ul>
-    <p>If your purchase didn't unlock what you expected, write to us first at <a href="mailto:bookhavensupport@gmail.com">bookhavensupport@gmail.com</a> — most "didn't unlock" issues are actually about which axis (subscription vs room IAP) does what. We're happy to clarify or guide you through a refund.</p>
+    <p>Full policy: <a href="https://hcyalcin.github.io/bookhaven-privacy/">hcyalcin.github.io/bookhaven-privacy</a></p>
 
-    <h2 id="progress">Reading progress &amp; bookmarks</h2>
-    <p>Your position in every book is saved every few seconds. When you re-open a book, you land where you left off. Bookmarks are saved per book; tap the bookmark icon in the reader's top bar to add or browse them. PDF and Web readers use page numbers; EPUB uses Readium positions.</p>
-    <p class="q">My progress is wrong on another device after iCloud sync</p>
-    <p>v1.0 uses last-write-wins for progress, not max-progress-wins. If you read on Device A to page 80 and Device B last saved page 50 (older), opening on B briefly shows page 50 until B writes its newer position. This corrects itself on the next page turn but can be confusing. We're tracking this for v1.1.</p>
-    <p class="q">My audiobook position resets</p>
-    <p>If your iPhone runs out of memory while playing in the background and iOS terminates BookHaven, the position is saved within ~15 seconds of the last progress update. In rare cases of force-quit you may lose up to 15 seconds of position. This is a deliberate trade-off to avoid writing to disk every second, which would harm SSD lifetime.</p>
-
-    <h2 id="havens">Havens, daily goals, streaks</h2>
-    <p>Your <strong>haven</strong> is the room you read in — The Study, The Tower, The Nook, Zen Garden, or The Witch's Attic. Each has its own ambient sound, particles, and color palette. Switch havens via <strong>Settings &rsaquo; Haven &amp; Atmosphere &rsaquo; Haven</strong> or the side menu's <strong>Switch Haven</strong> row. The Study is free; the other four are unlockable.</p>
-    <p>The <strong>daily goal</strong> defaults to 15 minutes and counts both reading time and listening time. The <strong>streak</strong> counts every day where you accumulate at least 5 minutes — that's the threshold for "you showed up." You can change the daily goal in Settings; the streak threshold is fixed.</p>
-    <p>The optional <strong>evening reminder</strong> sends a single notification between 6 and 9 PM if you haven't read yet that day. We don't push more than one reminder a day and we never send marketing notifications.</p>
-
-    <h2 id="accessibility">Accessibility</h2>
-    <p>BookHaven supports VoiceOver, Dynamic Type, the system's Reduce Motion and Reduce Transparency preferences, and the Large Content Viewer for icon-only buttons. Reading-text font and size are user-adjustable per book in the reader's settings panel.</p>
-    <p>If you find a place where accessibility is broken — a control that VoiceOver can't reach, text that doesn't scale, contrast that's hard to read — please write to <a href="mailto:bookhavensupport@gmail.com">bookhavensupport@gmail.com</a> with what you experienced. We treat accessibility regressions as bugs.</p>
-
-    <h2 id="reset">Resetting or removing data</h2>
-    <p class="q">Replay onboarding</p>
-    <p><strong>Settings &rsaquo; About &rsaquo; Replay Onboarding.</strong> Walks you through the welcome screens again without losing your library.</p>
-    <p class="q">Reset coach marks</p>
-    <p><strong>Settings &rsaquo; About &rsaquo; Reset Coach Marks</strong> brings back the haven tour and library tour on next launch. <strong>Reset Audiobook Player Tip</strong> brings back the audiobook player coach marks on next open.</p>
-    <p class="q">Remove ebook files synced to iCloud</p>
-    <p><strong>Settings &rsaquo; iCloud Sync (Beta) &rsaquo; Remove Synced Files from iCloud</strong> deletes the file bytes from iCloud (and other devices via sync) while keeping local files, metadata, bookmarks, and progress untouched.</p>
-    <p class="q">Reset everything</p>
-    <p>Delete BookHaven from your device. iOS will ask whether you also want to delete its iCloud data (if iCloud sync was on). On a fresh install, BookHaven starts clean.</p>
-
-    <h2 id="privacy-summary">Privacy &amp; what we collect</h2>
-    <p>The full policy lives at <a href="https://hcyalcin.github.io/bookhaven-privacy/">hcyalcin.github.io/bookhaven-privacy</a>. The short version:</p>
-    <ul>
-        <li>BookHaven has <strong>no servers</strong>. Your library, progress, bookmarks, and stats live on your device.</li>
-        <li>iCloud sync is private to your Apple ID. Apple sees the encrypted blobs; BookHaven does not.</li>
-        <li>The free tier shows ads via Google AdMob. AdMob receives device type, IP, country, and an optional Apple-managed identifier (only if you allow tracking via the iOS ATT dialog). AdMob never receives your reading history, library contents, or any in-app behavior.</li>
-        <li>No analytics, no behavioral tracking, no account required.</li>
-    </ul>
-
-    <h2 id="contact">Contacting support</h2>
-    <p>Mail <a href="mailto:bookhavensupport@gmail.com">bookhavensupport@gmail.com</a>. We aim to reply within five business days. Including the following details helps us help you faster:</p>
-    <ul>
-        <li>What you were trying to do</li>
-        <li>What happened instead</li>
-        <li>Your device model and iOS version (Settings &rsaquo; General &rsaquo; About)</li>
-        <li>BookHaven version (Settings &rsaquo; About &rsaquo; Version)</li>
-        <li>If a particular file caused the issue: the format (EPUB, PDF, etc.) and where it came from (publisher, Standard Ebooks, Project Gutenberg, etc.)</li>
-    </ul>
-    <p>For app questions in your own words, the inbox is the right place. For privacy questions, that same address works — every email reaches the same person (the developer).</p>
+    <h2 id="contact">Contact</h2>
+    <p>Mail <a href="mailto:bookhavensupport@gmail.com">bookhavensupport@gmail.com</a>. We reply within five business days. Including your device model, iOS version, and BookHaven version helps us help you faster.</p>
 
     <div class="footer">
         <p>BookHaven &mdash; A private reading sanctuary.</p>
