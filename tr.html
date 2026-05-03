@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BookHaven — Yardım ve SSS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --parchment:    #f4ead3;
+    --parchment-2:  #ecdfbf;
+    --ink:          #3a2a1a;
+    --ink-soft:     #5a4632;
+    --ink-faint:    #8a7355;
+    --brass:        #a8854a;
+    --brass-deep:   #8a6a35;
+    --brass-dark:   #6b4f22;
+    --rule:         #c9b287;
+    --oxblood:      #7a2e2a;
+    --oxblood-deep: #5c1f1c;
+    --teal:         #2d4a47;
+    --cream:        #f6ecd4;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    padding: clamp(1.5rem, 5vw, 3rem) clamp(1.1rem, 4.5vw, 2rem);
+    font-family: 'Lora', Georgia, 'Times New Roman', serif;
+    font-size: 17px;
+    line-height: 1.75;
+    color: var(--ink);
+    background-color: var(--parchment);
+    background-image:
+      radial-gradient(ellipse at 18% 12%, rgba(168, 133, 74, 0.10), transparent 55%),
+      radial-gradient(ellipse at 82% 88%, rgba(122, 46, 42, 0.06), transparent 60%),
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.35  0 0 0 0 0.24  0 0 0 0 0.12  0 0 0 0.09 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/></svg>");
+    background-attachment: fixed, fixed, fixed;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: clamp(1.25rem, 4vw, 2.5rem) clamp(1rem, 4vw, 2.25rem) clamp(2rem, 6vw, 3rem);
+  }
+
+  .ornament {
+    width: 56px;
+    height: 1px;
+    margin: 0 auto 1.75rem;
+    background: linear-gradient(to right, transparent 0%, var(--brass-deep) 50%, transparent 100%);
+  }
+
+  h1 {
+    font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+    font-weight: 600;
+    font-style: italic;
+    font-size: clamp(2.4rem, 7.5vw, 3.4rem);
+    line-height: 1.08;
+    letter-spacing: -0.01em;
+    text-align: center;
+    color: var(--ink);
+    margin: 0 0 0.6rem;
+  }
+
+  h1::after {
+    content: "";
+    display: block;
+    width: 88px;
+    height: 1px;
+    margin: 1.25rem auto 0;
+    background: linear-gradient(to right, transparent 0%, var(--brass) 20%, var(--brass-deep) 50%, var(--brass) 80%, transparent 100%);
+  }
+
+  .updated {
+    text-align: center;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-style: italic;
+    font-size: 1.05rem;
+    color: var(--ink-faint);
+    letter-spacing: 0.02em;
+    margin: 0 0 2.5rem;
+  }
+
+  .highlight {
+    position: relative;
+    margin: 2rem 0 3rem;
+    padding: clamp(1.75rem, 5vw, 2.5rem) clamp(1.5rem, 5vw, 2.25rem);
+    background-color: var(--oxblood);
+    background-image:
+      radial-gradient(ellipse at 30% 20%, rgba(255, 220, 180, 0.08), transparent 55%),
+      radial-gradient(ellipse at 70% 85%, rgba(0, 0, 0, 0.25), transparent 60%),
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='1.1' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.18 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.7'/></svg>");
+    border: 1px solid var(--brass);
+    outline: 1px solid var(--brass-deep);
+    outline-offset: 4px;
+    border-radius: 2px;
+    color: var(--cream);
+  }
+
+  .highlight::before {
+    content: "Bir Not";
+    display: block;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-variant: small-caps;
+    font-weight: 600;
+    letter-spacing: 0.32em;
+    font-size: 0.8rem;
+    color: var(--brass);
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .highlight p {
+    margin: 0;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(1.2rem, 4.6vw, 1.45rem);
+    line-height: 1.55;
+    text-align: center;
+    color: var(--cream);
+    font-style: italic;
+    text-wrap: pretty;
+  }
+
+  .highlight p strong {
+    font-style: normal;
+    font-weight: 600;
+    color: var(--cream);
+  }
+
+  .toc {
+    margin: 2rem 0 2.5rem;
+    padding: 1.25rem 1.5rem;
+    background: rgba(168, 133, 74, 0.06);
+    border-left: 2px solid var(--brass);
+    border-radius: 1px;
+  }
+
+  .toc h3 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-variant: small-caps;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    font-size: 0.9rem;
+    color: var(--brass-deep);
+    margin: 0 0 0.7rem;
+  }
+
+  .toc ol {
+    margin: 0;
+    padding-left: 1.25rem;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.05rem;
+    color: var(--ink-soft);
+    line-height: 1.7;
+  }
+
+  .toc ol li { margin-bottom: 0.15rem; }
+
+  .toc a {
+    color: var(--ink-soft);
+    border-bottom: none;
+  }
+
+  .toc a:hover, .toc a:focus {
+    color: var(--brass-dark);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 600;
+    font-size: clamp(1.35rem, 4.5vw, 1.6rem);
+    line-height: 1.25;
+    letter-spacing: -0.005em;
+    color: var(--ink);
+    margin: 2.75rem 0 0.75rem;
+    padding-top: 1.75rem;
+    border-top: 1px solid var(--rule);
+    position: relative;
+  }
+
+  h2::before {
+    content: "";
+    position: absolute;
+    top: -4.5px;
+    left: 0;
+    width: 8px;
+    height: 8px;
+    background: var(--brass);
+    transform: rotate(45deg);
+    box-shadow: 0 0 0 2px var(--parchment);
+  }
+  h2:nth-of-type(3n+2)::before { background: var(--oxblood); }
+  h2:nth-of-type(3n+3)::before { background: var(--teal); }
+
+  .q {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 600;
+    font-style: italic;
+    color: var(--oxblood-deep);
+    font-size: 1.18rem;
+    margin: 1.4rem 0 0.4rem;
+  }
+
+  p {
+    margin: 0 0 1.1rem;
+    text-wrap: pretty;
+    hyphens: auto;
+  }
+
+  strong { color: var(--oxblood-deep); font-weight: 600; }
+  em     { color: var(--teal); font-style: italic; }
+
+  ul {
+    margin: 0.25rem 0 1.4rem;
+    padding-left: 1.5rem;
+    list-style: none;
+  }
+
+  ul li {
+    position: relative;
+    padding-left: 0.25rem;
+    margin-bottom: 0.55rem;
+  }
+
+  ul li::before {
+    content: "";
+    position: absolute;
+    left: -1rem;
+    top: 0.78rem;
+    width: 5px;
+    height: 5px;
+    background: var(--brass);
+    border-radius: 50%;
+  }
+
+  a {
+    color: var(--brass-deep);
+    text-decoration: none;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 1px;
+  }
+
+  a:hover, a:focus {
+    color: var(--brass-dark);
+    border-bottom-color: var(--brass-dark);
+  }
+
+  .formats {
+    margin: 0.5rem 0 1.4rem;
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 0.95rem;
+  }
+
+  .formats th, .formats td {
+    text-align: left;
+    padding: 0.55rem 0.85rem;
+    border-bottom: 1px solid rgba(168, 133, 74, 0.25);
+  }
+
+  .formats th {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-variant: small-caps;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: var(--brass-deep);
+    font-size: 0.85rem;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .formats code {
+    font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+    font-size: 0.85rem;
+    color: var(--oxblood-deep);
+  }
+
+  .footer {
+    margin-top: 3.5rem;
+    padding-top: 2rem;
+    text-align: center;
+    border-top: none;
+    position: relative;
+  }
+
+  .footer::before {
+    content: "";
+    display: block;
+    width: 56px;
+    height: 1px;
+    margin: 0 auto 1.25rem;
+    background: linear-gradient(to right, transparent 0%, var(--brass-deep) 50%, transparent 100%);
+  }
+
+  .footer p {
+    margin: 0;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--ink-soft);
+    letter-spacing: 0.01em;
+  }
+
+  @media (max-width: 480px) {
+    main { padding-left: 0.25rem; padding-right: 0.25rem; }
+    body { font-size: 16.5px; line-height: 1.72; }
+    .highlight { outline-offset: 3px; }
+    .formats { font-size: 0.9rem; }
+    .formats th, .formats td { padding: 0.45rem 0.5rem; }
+  }
+
+  ::selection {
+    background: rgba(122, 46, 42, 0.25);
+    color: var(--ink);
+  }
+</style>
+</head>
+<body>
+<main>
+    <div class="ornament" aria-hidden="true"></div>
+
+    <h1>Yardım ve SSS</h1>
+    <p class="updated">BookHaven 1.0 için &middot; Son güncelleme: 3 Mayıs 2026 &middot; <a href="index.html">English</a></p>
+
+    <div class="highlight">
+        <p><strong>BookHaven, halihazırda sahip olduğun kitapları okur.</strong> Bir içerik mağazası değildir. Aşağıdaki sorular en sık karşılaşılanlardır. Seninkini göremiyorsan, <a href="mailto:bookhavensupport@gmail.com" style="color: var(--cream); border-bottom-color: var(--brass);">bookhavensupport@gmail.com</a> adresine yaz; beş iş günü içinde geri döneriz.</p>
+    </div>
+
+    <div class="toc" aria-label="İçindekiler">
+        <h3>İçindekiler</h3>
+        <ol>
+            <li><a href="#bringing-books">Kitaplarını içe aktarmak</a></li>
+            <li><a href="#formats">Hangi dosya formatları desteklenir</a></li>
+            <li><a href="#cloud-import">Dropbox, Google Drive, OneDrive'dan içe aktarma</a></li>
+            <li><a href="#kindle">Kindle kütüphanem ne olacak?</a></li>
+            <li><a href="#audiobooks">Sesli kitaplar</a></li>
+            <li><a href="#icloud-sync">iCloud senkronizasyonu (v1.0'da Beta)</a></li>
+            <li><a href="#purchases">Abonelik ile premium köşeler</a></li>
+            <li><a href="#refunds">İadeler</a></li>
+            <li><a href="#progress">Okuma ilerlemesi ve yer imleri</a></li>
+            <li><a href="#havens">Köşeler, günlük hedefler, seriler</a></li>
+            <li><a href="#accessibility">Erişilebilirlik</a></li>
+            <li><a href="#reset">Verileri sıfırlama veya kaldırma</a></li>
+            <li><a href="#privacy-summary">Gizlilik ve neler topluyoruz</a></li>
+            <li><a href="#contact">Destekle iletişim</a></li>
+        </ol>
+    </div>
+
+    <h2 id="bringing-books">Kitaplarını içe aktarmak</h2>
+    <p>BookHaven, mevcut kütüphanen üzerine kuruludur. Kitap eklemenin dört yolu vardır:</p>
+    <ul>
+        <li><strong>Dosyalar uygulaması / iCloud Drive.</strong> Dosyalar uygulamasını aç, bir EPUB, PDF, MOBI, AZW3, FB2, TXT, RTF, M4B, M4A veya MP3 bul ve <strong>Paylaş &rsaquo; BookHaven</strong>'a dokun. Ya da BookHaven'ı aç, köşenin üstündeki <strong>+</strong> düğmesine bas ve dosyayı Dosyalar tarayıcısından seç.</li>
+        <li><strong>AirDrop.</strong> Dosyayı başka bir cihazdan gönder. iOS, hedef olarak BookHaven'ı önerecek.</li>
+        <li><strong>Bulut servisleri.</strong> <strong>Keşfet &rsaquo; Bir bulut servisi bağla</strong> bölümünden bir Dropbox, Google Drive veya OneDrive hesabı bağla, sonra göz at ve içe aktar. Detaylar için aşağıdaki bölüme bak.</li>
+        <li><strong>E-posta veya web indirmesi.</strong> Eki veya indirmeyi Safari'de aç, sonra <strong>Paylaş &rsaquo; BookHaven</strong>'a dokun.</li>
+    </ul>
+    <p>BookHaven, başlangıçta yedi Standard Ebooks klasik içerir (Wuthering Heights, Pride and Prejudice, Dracula, Frankenstein, Sherlock Holmes maceraları, Jekyll ve Hyde, The War of the Worlds) — okuyucuyu hemen denemen için. Aşık olacağın okuyucuyu yapan, bilakis kendi getirdiğin kitaplardır.</p>
+
+    <h2 id="formats">Hangi dosya formatları desteklenir</h2>
+    <table class="formats">
+        <thead>
+            <tr><th>Tür</th><th>Formatlar</th><th>Notlar</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>E-kitap</td><td><code>EPUB</code></td><td>Readium ile yerel görüntüleme, tam reflow, içindekiler, fontlar, temalar</td></tr>
+            <tr><td>E-kitap</td><td><code>PDF</code></td><td>Sıkıştırarak yakınlaştırma, kaydırma modu, koyu/sepya, arama, yer imleri</td></tr>
+            <tr><td>E-kitap</td><td><code>MOBI</code>, <code>AZW3</code></td><td>Reflow ve içindekiler (KF7 ve KF8)</td></tr>
+            <tr><td>E-kitap</td><td><code>FB2</code>, <code>TXT</code>, <code>RTF</code></td><td>Sayfalandırılmış görüntüleyici ile reflow</td></tr>
+            <tr><td>Sesli kitap</td><td><code>M4B</code>, <code>M4A</code></td><td>Gömülü bölümler, iOS yerel kod çözücüsü ile Dolby Atmos</td></tr>
+            <tr><td>Sesli kitap</td><td><code>MP3</code></td><td>Tek dosya veya çoklu dosya klasörleri, ID3 bölümleri, disk-klasör düzenleri</td></tr>
+        </tbody>
+    </table>
+    <p>BookHaven, DRM korumalı dosyaları (Kindle <code>.azw</code>, Audible <code>.aax</code>, FairPlay korumalı Apple Books <code>.epub</code>) <em>okumaz</em>. Herhangi bir okuyucunun açabilmesi için dosyanın DRM'siz olması gerekir; bu BookHaven'a özgü bir sınırlama değildir.</p>
+
+    <h2 id="cloud-import">Dropbox, Google Drive, OneDrive'dan içe aktarma</h2>
+    <p><strong>Keşfet &rsaquo; Bir bulut servisi bağla</strong> bölümünü aç. Üç sağlayıcıdan birine dokun; iOS giriş için Safari'yi açacak. Erişim verdikten sonra BookHaven'a yönlendirileceksin ve bulut klasörlerini gösteren bir dosya seçici göreceksin.</p>
+    <p>BookHaven, kimlik doğrulama için PKCE ile OAuth 2.1 kullanır ve erişim belirtecini yalnızca cihazının anahtar zincirinde saklar. <strong>Ayarlar &rsaquo; Bulut Hesapları</strong> bölümünden istediğin zaman herhangi bir hesabın bağlantısını kesebilirsin; belirteç anahtar zincirinden hemen silinir.</p>
+    <p class="q">Google Drive seçicisi neden farklı?</p>
+    <p>Google'ın <em>drive.file</em> izni, BookHaven'a yalnızca <strong>açıkça seçtiğin</strong> dosyaları görme hakkı verir — tüm Drive'ını değil. Bu yüzden klasörlere göz atmak yerine Google'ın standart dosya seçicisini görürsün. Bir kitap seç, BookHaven indirsin. Sonra tekrar içe aktarmak için yine seç.</p>
+    <p class="q">Çoklu dosya MP3 sesli kitapları?</p>
+    <p>Bir klasör birden fazla MP3 bölümü içeriyorsa (isteğe bağlı CD-1, CD-2 alt klasörleri, kapak görseli, NFO veya CUE sayfası ile), BookHaven düzeni algılar, tüm dosyaları birlikte kopyalar ve klasörün tamamını bölüm gezintisi olan tek bir sesli kitap gibi davranır.</p>
+
+    <h2 id="kindle">Kindle kütüphanem ne olacak?</h2>
+    <p>Açıkçası: BookHaven, Kindle'ın şifrelenmiş dosyalarını doğrudan okuyamaz. Amazon'un DRM'si onları korur ve bunu aşmanın bir yolu yoktur.</p>
+    <p>İnsanların genellikle yaptığı şey, App Store ekosisteminin <em>dışında</em> üçüncü taraf araçlar kullanarak kişisel Kindle alımlarını DRM'siz EPUB dosyaları olarak yedeklemek ve sonra bunları seçtikleri bir okuyucuya (BookHaven, Apple Books, başka bir şey) içe aktarmaktır. Bunu yapıp yapmamak ve nasıl yapacağın senin yargı bölgene ve kişisel tutumuna bağlıdır — bu konuda sana rehberlik edemeyiz. Eğer kütüphanenin DRM'siz EPUB'larına zaten sahipsen, yukarıdaki Dosyalar uygulaması veya bulut içe aktarma yolları onları alacaktır.</p>
+
+    <h2 id="audiobooks">Sesli kitaplar</h2>
+    <p class="q">Hangi sesli kitap formatları?</p>
+    <p>M4B ve M4A (aynı MP4 kapsayıcısı; M4A dosyaları sadece farklı bir uzantı kullanır) ve MP3 — tek dosya olarak veya bölümleri temsil eden çoklu dosyalardan oluşan bir klasör olarak. BookHaven ayrıca Dolby Atmos sesli kitapları (JOC ile Enhanced AC-3 / EC-3) destekler; AirPods Pro / Max / HomePod / AirPlay 2 uç noktalarında iOS, mekânsal sesi otomatik olarak yönlendirir.</p>
+    <p class="q">Bölüm başlıkları nereden gelir?</p>
+    <p>M4B/M4A için, BookHaven gömülü bölüm parçasını okur ve başlıkları bulmak için birkaç yerel ayar yolundan geçer (bazı Audible kodlu dosyalar bölümleri <code>mis</code> yerel ayarıyla etiketler; bulana kadar mevcut her yerel ayarı denemekteyiz). MP3 için, varsa ID3 bölüm etiketlerini, çevreleyen klasör yapısını veya bir CUE sayfasını kullanırız.</p>
+    <p class="q">Disk-klasör sesli kitapları (CD 1, CD 2…)?</p>
+    <p>Herhangi bir disk klasöründeki herhangi bir MP3'ü seç. BookHaven düzeni algılar, tüm diskleri tek bir sesli kitaba kopyalar ve diskler arasında bölümlerin doğru sırada kalması için dosya adlarına ön ek ekler.</p>
+    <p class="q">Sesli kitabım çalıyor ama bölüm göremiyorum</p>
+    <p>Eğer dosyada hiç gömülü bölüm bilgisi yoksa, BookHaven onu baştan sona çalar. Yine de yer imi koyabilir, uyku zamanlayıcısı ayarlayabilir ve kilit ekranından devam edebilirsin.</p>
+    <p class="q">CarPlay desteği?</p>
+    <p>Lansmandan sonra geliyor — v1.0'da yok.</p>
+
+    <h2 id="icloud-sync">iCloud senkronizasyonu (v1.0'da Beta)</h2>
+    <p>v1.0 için iCloud senkronizasyonu <strong>isteğe bağlı beta</strong> olarak gönderiliyor ve varsayılan olarak KAPALIDIR. Açmak için:</p>
+    <ul>
+        <li>Uygulamada <strong>Ayarlar &rsaquo; iCloud Senkronizasyonu (Beta)</strong>'yu aç</li>
+        <li><strong>iCloud ile Senkronize Et</strong> düğmesini açık konuma getir</li>
+        <li>BookHaven'ı yeniden başlat</li>
+    </ul>
+    <p>Açık olduğunda, kütüphanen, yer imlerin, okuma ilerlemen ve rafların aynı Apple ID ile oturum açtığın Apple cihazları arasında senkronize olur. Verilerin <em>özel</em> iCloud veritabanında — Apple'ın CloudKit'inde — yaşar ve BookHaven'ın bu döngüde sunucuları yoktur.</p>
+    <p>Cihazlar arası senkronizasyon her kullanıcının özel Apple ID'sine, ağ koşullarına ve cihazlarına bağlı olduğundan, v1.0 senkronizasyonu gerçek dünya raporlarını toplarken isteğe bağlı olarak gönderiyor. Açıp herhangi bir sorunla karşılaşırsan (ikinci bir cihazda boş görünen bir raf, ulaşmayan bir yer imi, seni şaşırtan herhangi bir şey), lütfen <a href="mailto:bookhavensupport@gmail.com">bookhavensupport@gmail.com</a> adresine ne gördüğünü yaz — bu, varsayılanı v1.1 için açık konuma getirmemize yardımcı olur.</p>
+    <p class="q">E-kitap dosyalarını da (EPUB / PDF baytları) senkronize edebilir miyim?</p>
+    <p>Evet — aynı panelde <strong>E-Kitap Dosyalarını Senkronize Et</strong>'i aç. Bu ana düğmeden bağımsızdır ve varsayılan olarak kapalıdır. 40 MB altındaki dosyalar iCloud'un CKAsset'i ile senkronize olur; daha büyük dosyalar yerel kalır. Sesli kitap dosyaları iCloud üzerinden <strong>asla</strong> senkronize olmaz — diğer cihazda Dropbox, Google Drive veya OneDrive'dan tekrar içe aktar.</p>
+    <p class="q">iCloud kotam dolu</p>
+    <p>BookHaven, iCloud kota hatalarını algılar ve <strong>Ayarlar &rsaquo; iCloud Senkronizasyonu (Beta)</strong> bölümünde bir banner gösterir. iCloud.com'da iCloud alanını boşalt veya iCloud+ yükselt; senkronizasyon otomatik devam eder. Kota hatası yalnızca <em>yeni</em> yüklemeleri durdurur — mevcut senkronize verilerin sağlam kalır.</p>
+    <p class="q">Apple ID değiştiriyor musun?</p>
+    <p>iCloud'dan çıkış yapmadan önce, kişisel bir güvenlik ağı olarak <strong>Ayarlar</strong>'dan kütüphanenin JSON anlık görüntüsünü dışa aktar. iCloud, çıkış yapmanın uygulama verilerini etkileyebileceği konusunda uyarır; BookHaven ile yerel veritabanı cihazda kalır, ancak iCloud-senkronize kayıtları eski Apple ID ile gider.</p>
+
+    <h2 id="purchases">Abonelik ile premium köşeler</h2>
+    <p>BookHaven'da <strong>iki bağımsız satın alma türü</strong> vardır. İnsanlar bazen birinin diğerini de aldığını sanır; almaz.</p>
+    <ul>
+        <li><strong>Reklamsız Üyelik</strong> &mdash; bir abonelik. Reklamları kaldırır. <em>Premium köşeleri açmaz.</em></li>
+        <li><strong>Premium köşe satın almaları</strong> &mdash; köşe başına tek seferlik satın alma (Kule, Kış Köşesi, Zen Bahçesi, Cadının Çatı Katı). O belirli köşeyi sonsuza dek açar. <em>Reklamları kaldırmaz.</em></li>
+    </ul>
+    <p>Hiçbirine, birine, diğerine veya her ikisine de sahip olabilirsin. Kütüphane herkes için sonsuza dek ücretsizdir. Mağaza'daki bağış IAP'ları, herhangi bir işlevsel değişiklik olmadan geliştiriciye küçük bir teşekkür gönderir.</p>
+    <p class="q">Satın alımlarımı ailemle paylaşabilir miyim?</p>
+    <p>Abonelik ve premium köşeler Aile Paylaşımı için etkindir. Bağış IAP'ları değildir (bunlar transfer edilebilir ödüller değildir).</p>
+    <p class="q">Hoş geldin hediyesi ne zaman biter?</p>
+    <p>İlk başlatmadan yedi gün sonra. Hediye boyunca her köşe açıktır ve reklamlar kapalıdır. Yedinci günden sonra, reklamlarla birlikte (ücretsiz katman) Kütüphane'ye geri dönersin. Hediye öncesinde, sırasında veya sonrasında istediğin zaman abone olabilir veya köşe satın alabilirsin.</p>
+
+    <h2 id="refunds">İadeler</h2>
+    <p>App Store satın alımları BookHaven tarafından değil, Apple tarafından iade edilir. Ödeme bilgilerini görmüyoruz ve iadeleri kendimiz işlemiyoruz. İade istemek için:</p>
+    <ul>
+        <li><a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>'u ziyaret et</li>
+        <li>Apple ID'nle giriş yap</li>
+        <li>BookHaven satın alımını bul ve <strong>Sorun Bildir</strong>'e dokun</li>
+    </ul>
+    <p>Satın alımın beklediğin şeyi açmadıysa, önce <a href="mailto:bookhavensupport@gmail.com">bookhavensupport@gmail.com</a> adresine yaz — çoğu "açmadı" sorunu aslında hangi eksenin (abonelik veya köşe IAP'si) ne yaptığıyla ilgilidir. Açıklamaktan veya iade sürecinde sana rehberlik etmekten mutluluk duyarız.</p>
+
+    <h2 id="progress">Okuma ilerlemesi ve yer imleri</h2>
+    <p>Her kitaptaki konumun birkaç saniyede bir kaydedilir. Bir kitabı tekrar açtığında, kaldığın yerden devam edersin. Yer imleri kitap başına kaydedilir; eklemek veya gözden geçirmek için okuyucunun üst çubuğundaki yer imi simgesine dokun. PDF ve Web okuyucuları sayfa numaraları kullanır; EPUB ise Readium konumlarını kullanır.</p>
+    <p class="q">İlerlemeniz iCloud senkronizasyonundan sonra başka bir cihazda yanlış</p>
+    <p>v1.0, ilerleme için maksimum-ilerleme-kazanır değil, son-yazma-kazanır kullanır. Cihaz A'da sayfa 80'e kadar okursan ve Cihaz B en son sayfa 50'yi (eski) kaydetmişse, B'de açıldığında B kendi yeni konumunu yazana kadar kısa süre sayfa 50'yi gösterir. Bu, bir sonraki sayfa çevirmesinde düzelir ama kafa karıştırıcı olabilir. Bunu v1.1 için takip ediyoruz.</p>
+    <p class="q">Sesli kitap konumum sıfırlanıyor</p>
+    <p>iPhone'unun arka planda çalarken belleği biterse ve iOS BookHaven'ı sonlandırırsa, konum son ilerleme güncellemesinden ~15 saniye içinde kaydedilir. Nadir zorla kapatma durumlarında 15 saniyeye kadar konum kaybedebilirsin. Bu, her saniye diske yazma yapmanın SSD ömrüne zarar vermesini önlemek için yapılan kasıtlı bir tercihtir.</p>
+
+    <h2 id="havens">Köşeler, günlük hedefler, seriler</h2>
+    <p><strong>Köşen</strong> okuduğun odadır — Kütüphane, Kule, Kış Köşesi, Zen Bahçesi veya Cadının Çatı Katı. Her birinin kendi ortam sesi, parçacıkları ve renk paleti vardır. Köşeleri <strong>Ayarlar &rsaquo; Köşe ve Atmosfer &rsaquo; Köşe</strong> bölümünden veya yan menünün <strong>Köşe Değiştir</strong> satırından değiştirebilirsin. Kütüphane ücretsizdir; diğer dördü açılabilir.</p>
+    <p><strong>Günlük hedef</strong> varsayılan olarak 15 dakikadır ve hem okuma hem de dinleme süresini sayar. <strong>Seri</strong>, en az 5 dakika biriktirdiğin her günü sayar — bu "bugün de buradaydım" eşiğidir. Günlük hedefi Ayarlar'da değiştirebilirsin; seri eşiği sabittir.</p>
+    <p>İsteğe bağlı <strong>akşam hatırlatıcısı</strong>, o gün henüz okumadıysan 18:00 ile 21:00 arasında tek bir bildirim gönderir. Günde birden fazla hatırlatıcı göndermeyiz ve asla pazarlama bildirimi göndermeyiz.</p>
+
+    <h2 id="accessibility">Erişilebilirlik</h2>
+    <p>BookHaven; VoiceOver, Dinamik Tip, sistem Hareketi Azalt ve Şeffaflığı Azalt tercihlerini ve simge-yalnızca düğmeler için Büyük İçerik Görüntüleyici'yi destekler. Okuma metni yazı tipi ve boyutu, okuyucunun ayarlar panelinde kitap başına kullanıcı tarafından ayarlanabilir.</p>
+    <p>Erişilebilirliğin bozuk olduğu bir yer bulursan — VoiceOver'ın ulaşamadığı bir kontrol, ölçeklenmeyen metin, okunması zor kontrast — lütfen yaşadıklarını <a href="mailto:bookhavensupport@gmail.com">bookhavensupport@gmail.com</a>'a yaz. Erişilebilirlik gerilemelerini hata olarak ele alıyoruz.</p>
+
+    <h2 id="reset">Verileri sıfırlama veya kaldırma</h2>
+    <p class="q">Karşılama akışını yeniden oynat</p>
+    <p><strong>Ayarlar &rsaquo; Hakkında &rsaquo; Karşılama Akışını Yeniden Oynat.</strong> Kütüphaneni kaybetmeden karşılama ekranlarında sana tekrar yol gösterir.</p>
+    <p class="q">Koç işaretlerini sıfırla</p>
+    <p><strong>Ayarlar &rsaquo; Hakkında &rsaquo; Koç İşaretlerini Sıfırla</strong>, sonraki açılışta köşe turunu ve kütüphane turunu geri getirir. <strong>Sesli Kitap Oynatıcı İpucunu Sıfırla</strong>, sonraki açılışta sesli kitap oynatıcı koç işaretlerini geri getirir.</p>
+    <p class="q">iCloud'a senkronize edilmiş e-kitap dosyalarını kaldır</p>
+    <p><strong>Ayarlar &rsaquo; iCloud Senkronizasyonu (Beta) &rsaquo; Senkronize Edilen Dosyaları iCloud'dan Kaldır</strong>, yerel dosyaları, üst veriyi, yer imlerini ve ilerlemeyi dokunmadan iCloud'dan dosya baytlarını siler (ve senkronizasyon yoluyla diğer cihazlardan).</p>
+    <p class="q">Her şeyi sıfırla</p>
+    <p>BookHaven'ı cihazından sil. iOS, iCloud verilerini de silmek isteyip istemediğini sorar (iCloud senkronizasyonu açıksa). Yeni bir kurulumda BookHaven temiz başlar.</p>
+    <p class="q">Bir anlık görüntü dışa aktar</p>
+    <p>Apple ID değiştirmek üzereysen ve bir güvenlik ağı istiyorsan, Ayarlar'ın dışa aktarabileceği JSON anlık görüntüsü kütüphaneni, raflarını, yer imlerini, ilerlemeni ve kapakları kapsar — ancak e-kitap dosyalarının baytlarını içermez. Referans olarak faydalıdır; dosya senin, diğer yedeklerini sakladığın yerde sakla.</p>
+
+    <h2 id="privacy-summary">Gizlilik ve neler topluyoruz</h2>
+    <p>Tam politika <a href="https://hcyalcin.github.io/bookhaven-privacy/tr.html">hcyalcin.github.io/bookhaven-privacy/tr.html</a>'de bulunuyor. Kısa versiyon:</p>
+    <ul>
+        <li>BookHaven'ın <strong>sunucusu yok</strong>. Kütüphanen, ilerlemen, yer imlerin ve istatistiklerin cihazında yaşar.</li>
+        <li>iCloud senkronizasyonu Apple ID'ne özeldir. Apple, şifreli blokları görür; BookHaven görmez.</li>
+        <li>Ücretsiz katman, Google AdMob aracılığıyla reklamlar gösterir. AdMob; cihaz türü, IP, ülke ve isteğe bağlı bir Apple-yönetimli tanımlayıcı (yalnızca iOS ATT iletişim kutusu aracılığıyla izlemeye izin verirsen) alır. AdMob asla okuma geçmişini, kütüphane içeriğini veya uygulama içi davranışını almaz.</li>
+        <li>Analitik yok, davranışsal izleme yok, hesap gerekmez.</li>
+    </ul>
+
+    <h2 id="contact">Destekle iletişim</h2>
+    <p><a href="mailto:bookhavensupport@gmail.com">bookhavensupport@gmail.com</a>'a yaz. Beş iş günü içinde geri dönmeyi hedefliyoruz. Aşağıdaki ayrıntıları eklemek sana daha hızlı yardımcı olmamızı sağlar:</p>
+    <ul>
+        <li>Ne yapmaya çalışıyordun</li>
+        <li>Onun yerine ne oldu</li>
+        <li>Cihaz modelin ve iOS sürümün (Ayarlar &rsaquo; Genel &rsaquo; Hakkında)</li>
+        <li>BookHaven sürümü (Ayarlar &rsaquo; Hakkında &rsaquo; Sürüm)</li>
+        <li>Belirli bir dosya soruna neden olduysa: format (EPUB, PDF, vb.) ve nereden geldiği (yayıncı, Standard Ebooks, Project Gutenberg, vb.)</li>
+    </ul>
+    <p>Uygulama soruları için kendi kelimelerinle, doğru gelen yer bu adres. Gizlilik soruları için de aynı adres çalışır — her e-posta aynı kişiye (geliştiriciye) ulaşır.</p>
+
+    <div class="footer">
+        <p>BookHaven &mdash; Özel bir okuma sığınağı.</p>
+    </div>
+</main>
+</body>
+</html>

@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BookHaven — Help &amp; FAQ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --parchment:    #f4ead3;
+    --parchment-2:  #ecdfbf;
+    --ink:          #3a2a1a;
+    --ink-soft:     #5a4632;
+    --ink-faint:    #8a7355;
+    --brass:        #a8854a;
+    --brass-deep:   #8a6a35;
+    --brass-dark:   #6b4f22;
+    --rule:         #c9b287;
+    --oxblood:      #7a2e2a;
+    --oxblood-deep: #5c1f1c;
+    --teal:         #2d4a47;
+    --cream:        #f6ecd4;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    padding: clamp(1.5rem, 5vw, 3rem) clamp(1.1rem, 4.5vw, 2rem);
+    font-family: 'Lora', Georgia, 'Times New Roman', serif;
+    font-size: 17px;
+    line-height: 1.75;
+    color: var(--ink);
+    background-color: var(--parchment);
+    background-image:
+      radial-gradient(ellipse at 18% 12%, rgba(168, 133, 74, 0.10), transparent 55%),
+      radial-gradient(ellipse at 82% 88%, rgba(122, 46, 42, 0.06), transparent 60%),
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.35  0 0 0 0 0.24  0 0 0 0 0.12  0 0 0 0.09 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/></svg>");
+    background-attachment: fixed, fixed, fixed;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: clamp(1.25rem, 4vw, 2.5rem) clamp(1rem, 4vw, 2.25rem) clamp(2rem, 6vw, 3rem);
+  }
+
+  .ornament {
+    width: 56px;
+    height: 1px;
+    margin: 0 auto 1.75rem;
+    background: linear-gradient(to right, transparent 0%, var(--brass-deep) 50%, transparent 100%);
+  }
+
+  h1 {
+    font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+    font-weight: 600;
+    font-style: italic;
+    font-size: clamp(2.4rem, 7.5vw, 3.4rem);
+    line-height: 1.08;
+    letter-spacing: -0.01em;
+    text-align: center;
+    color: var(--ink);
+    margin: 0 0 0.6rem;
+  }
+
+  h1::after {
+    content: "";
+    display: block;
+    width: 88px;
+    height: 1px;
+    margin: 1.25rem auto 0;
+    background: linear-gradient(to right, transparent 0%, var(--brass) 20%, var(--brass-deep) 50%, var(--brass) 80%, transparent 100%);
+  }
+
+  .updated {
+    text-align: center;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-style: italic;
+    font-size: 1.05rem;
+    color: var(--ink-faint);
+    letter-spacing: 0.02em;
+    margin: 0 0 2.5rem;
+  }
+
+  /* Welcome bookplate — same shape as privacy "A Promise" but warmer label */
+  .highlight {
+    position: relative;
+    margin: 2rem 0 3rem;
+    padding: clamp(1.75rem, 5vw, 2.5rem) clamp(1.5rem, 5vw, 2.25rem);
+    background-color: var(--oxblood);
+    background-image:
+      radial-gradient(ellipse at 30% 20%, rgba(255, 220, 180, 0.08), transparent 55%),
+      radial-gradient(ellipse at 70% 85%, rgba(0, 0, 0, 0.25), transparent 60%),
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='1.1' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.18 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.7'/></svg>");
+    border: 1px solid var(--brass);
+    outline: 1px solid var(--brass-deep);
+    outline-offset: 4px;
+    border-radius: 2px;
+    color: var(--cream);
+  }
+
+  .highlight::before {
+    content: "A Note";
+    display: block;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-variant: small-caps;
+    font-weight: 600;
+    letter-spacing: 0.32em;
+    font-size: 0.8rem;
+    color: var(--brass);
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .highlight p {
+    margin: 0;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(1.2rem, 4.6vw, 1.45rem);
+    line-height: 1.55;
+    text-align: center;
+    color: var(--cream);
+    font-style: italic;
+    text-wrap: pretty;
+  }
+
+  .highlight p strong {
+    font-style: normal;
+    font-weight: 600;
+    color: var(--cream);
+  }
+
+  /* TOC — small links to anchors */
+  .toc {
+    margin: 2rem 0 2.5rem;
+    padding: 1.25rem 1.5rem;
+    background: rgba(168, 133, 74, 0.06);
+    border-left: 2px solid var(--brass);
+    border-radius: 1px;
+  }
+
+  .toc h3 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-variant: small-caps;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    font-size: 0.9rem;
+    color: var(--brass-deep);
+    margin: 0 0 0.7rem;
+  }
+
+  .toc ol {
+    margin: 0;
+    padding-left: 1.25rem;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.05rem;
+    color: var(--ink-soft);
+    line-height: 1.7;
+  }
+
+  .toc ol li { margin-bottom: 0.15rem; }
+
+  .toc a {
+    color: var(--ink-soft);
+    border-bottom: none;
+  }
+
+  .toc a:hover, .toc a:focus {
+    color: var(--brass-dark);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 600;
+    font-size: clamp(1.35rem, 4.5vw, 1.6rem);
+    line-height: 1.25;
+    letter-spacing: -0.005em;
+    color: var(--ink);
+    margin: 2.75rem 0 0.75rem;
+    padding-top: 1.75rem;
+    border-top: 1px solid var(--rule);
+    position: relative;
+  }
+
+  h2::before {
+    content: "";
+    position: absolute;
+    top: -4.5px;
+    left: 0;
+    width: 8px;
+    height: 8px;
+    background: var(--brass);
+    transform: rotate(45deg);
+    box-shadow: 0 0 0 2px var(--parchment);
+  }
+  h2:nth-of-type(3n+2)::before { background: var(--oxblood); }
+  h2:nth-of-type(3n+3)::before { background: var(--teal); }
+
+  /* Q&A pair styling */
+  .q {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 600;
+    font-style: italic;
+    color: var(--oxblood-deep);
+    font-size: 1.18rem;
+    margin: 1.4rem 0 0.4rem;
+  }
+
+  p {
+    margin: 0 0 1.1rem;
+    text-wrap: pretty;
+    hyphens: auto;
+  }
+
+  strong { color: var(--oxblood-deep); font-weight: 600; }
+  em     { color: var(--teal); font-style: italic; }
+
+  ul {
+    margin: 0.25rem 0 1.4rem;
+    padding-left: 1.5rem;
+    list-style: none;
+  }
+
+  ul li {
+    position: relative;
+    padding-left: 0.25rem;
+    margin-bottom: 0.55rem;
+  }
+
+  ul li::before {
+    content: "";
+    position: absolute;
+    left: -1rem;
+    top: 0.78rem;
+    width: 5px;
+    height: 5px;
+    background: var(--brass);
+    border-radius: 50%;
+  }
+
+  a {
+    color: var(--brass-deep);
+    text-decoration: none;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 1px;
+  }
+
+  a:hover, a:focus {
+    color: var(--brass-dark);
+    border-bottom-color: var(--brass-dark);
+  }
+
+  /* Format support table */
+  .formats {
+    margin: 0.5rem 0 1.4rem;
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 0.95rem;
+  }
+
+  .formats th, .formats td {
+    text-align: left;
+    padding: 0.55rem 0.85rem;
+    border-bottom: 1px solid rgba(168, 133, 74, 0.25);
+  }
+
+  .formats th {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-variant: small-caps;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: var(--brass-deep);
+    font-size: 0.85rem;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .formats code {
+    font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+    font-size: 0.85rem;
+    color: var(--oxblood-deep);
+  }
+
+  .footer {
+    margin-top: 3.5rem;
+    padding-top: 2rem;
+    text-align: center;
+    border-top: none;
+    position: relative;
+  }
+
+  .footer::before {
+    content: "";
+    display: block;
+    width: 56px;
+    height: 1px;
+    margin: 0 auto 1.25rem;
+    background: linear-gradient(to right, transparent 0%, var(--brass-deep) 50%, transparent 100%);
+  }
+
+  .footer p {
+    margin: 0;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--ink-soft);
+    letter-spacing: 0.01em;
+  }
+
+  @media (max-width: 480px) {
+    main { padding-left: 0.25rem; padding-right: 0.25rem; }
+    body { font-size: 16.5px; line-height: 1.72; }
+    .highlight { outline-offset: 3px; }
+    .formats { font-size: 0.9rem; }
+    .formats th, .formats td { padding: 0.45rem 0.5rem; }
+  }
+
+  ::selection {
+    background: rgba(122, 46, 42, 0.25);
+    color: var(--ink);
+  }
+</style>
+</head>
+<body>
+<main>
+    <div class="ornament" aria-hidden="true"></div>
+
+    <h1>Help &amp; FAQ</h1>
+    <p class="updated">For BookHaven 1.0 &middot; Last updated: May 3, 2026 &middot; <a href="tr.html">Türkçe</a></p>
+
+    <div class="highlight">
+        <p><strong>BookHaven reads books you already own.</strong> It is not a content store. The questions below are the ones that come up most. If you don't see yours, write to <a href="mailto:bookhavensupport@gmail.com" style="color: var(--cream); border-bottom-color: var(--brass);">bookhavensupport@gmail.com</a> and we'll write back within five business days.</p>
+    </div>
+
+    <div class="toc" aria-label="Table of contents">
+        <h3>Contents</h3>
+        <ol>
+            <li><a href="#bringing-books">Bringing your books in</a></li>
+            <li><a href="#formats">Which file formats are supported</a></li>
+            <li><a href="#cloud-import">Importing from Dropbox, Google Drive, OneDrive</a></li>
+            <li><a href="#kindle">What about my Kindle library?</a></li>
+            <li><a href="#audiobooks">Audiobooks</a></li>
+            <li><a href="#icloud-sync">iCloud sync (Beta in v1.0)</a></li>
+            <li><a href="#purchases">Subscription vs premium rooms</a></li>
+            <li><a href="#refunds">Refunds</a></li>
+            <li><a href="#progress">Reading progress &amp; bookmarks</a></li>
+            <li><a href="#havens">Havens, daily goals, streaks</a></li>
+            <li><a href="#accessibility">Accessibility</a></li>
+            <li><a href="#reset">Resetting or removing data</a></li>
+            <li><a href="#privacy-summary">Privacy &amp; what we collect</a></li>
+            <li><a href="#contact">Contacting support</a></li>
+        </ol>
+    </div>
+
+    <h2 id="bringing-books">Bringing your books in</h2>
+    <p>BookHaven is built around your existing library. There are four ways to add books:</p>
+    <ul>
+        <li><strong>Files app / iCloud Drive.</strong> Open the Files app, find an EPUB, PDF, MOBI, AZW3, FB2, TXT, RTF, M4B, M4A, or MP3, and tap <strong>Share &rsaquo; BookHaven</strong>. Or open BookHaven, tap the <strong>+</strong> button at the top of the haven, and pick the file from the Files browser.</li>
+        <li><strong>AirDrop.</strong> Send the file from another device. iOS will offer BookHaven as a destination.</li>
+        <li><strong>Cloud services.</strong> Connect a Dropbox, Google Drive, or OneDrive account in <strong>Discover &rsaquo; Connect a cloud service</strong>, then browse and import. See the section below for details.</li>
+        <li><strong>Email or web download.</strong> Open the attachment or download in Safari, then tap <strong>Share &rsaquo; BookHaven</strong>.</li>
+    </ul>
+    <p>BookHaven includes seven Standard Ebooks classics out of the box (Wuthering Heights, Pride and Prejudice, Dracula, Frankenstein, Sherlock Holmes, Jekyll and Hyde, The War of the Worlds) so you can try the reader immediately. The reader you fall in love with — that's whichever books you bring in.</p>
+
+    <h2 id="formats">Which file formats are supported</h2>
+    <table class="formats">
+        <thead>
+            <tr><th>Kind</th><th>Formats</th><th>Notes</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>Ebook</td><td><code>EPUB</code></td><td>Native rendering via Readium, full reflow, table of contents, fonts, themes</td></tr>
+            <tr><td>Ebook</td><td><code>PDF</code></td><td>Pinch-to-zoom, scroll mode, dark/sepia, search, bookmarks</td></tr>
+            <tr><td>Ebook</td><td><code>MOBI</code>, <code>AZW3</code></td><td>Reflow + table of contents (KF7 and KF8)</td></tr>
+            <tr><td>Ebook</td><td><code>FB2</code>, <code>TXT</code>, <code>RTF</code></td><td>Reflow with paginated viewer</td></tr>
+            <tr><td>Audiobook</td><td><code>M4B</code>, <code>M4A</code></td><td>Embedded chapters, Dolby Atmos via iOS native decoder</td></tr>
+            <tr><td>Audiobook</td><td><code>MP3</code></td><td>Single file or multi-file folders, ID3 chapters, disc-folder layouts</td></tr>
+        </tbody>
+    </table>
+    <p>BookHaven does <em>not</em> read DRM-protected files (Kindle <code>.azw</code>, Audible <code>.aax</code>, Apple Books <code>.epub</code> with FairPlay). The file has to be DRM-free for any reader to open it; this is not a BookHaven limitation.</p>
+
+    <h2 id="cloud-import">Importing from Dropbox, Google Drive, OneDrive</h2>
+    <p>Open <strong>Discover &rsaquo; Connect a cloud service</strong>. Tap one of the three providers; iOS will open Safari for sign-in. After you grant access, you'll be returned to BookHaven with a file picker showing your cloud folders.</p>
+    <p>BookHaven uses OAuth 2.1 with PKCE and stores the access token in your device's keychain only. Disconnect any account at any time via <strong>Settings &rsaquo; Cloud Accounts</strong>; the token is deleted from the keychain immediately.</p>
+    <p class="q">Why is the Google Drive picker different?</p>
+    <p>Google's <em>drive.file</em> permission lets BookHaven see only the files <strong>you explicitly pick</strong> — not your whole Drive. So instead of browsing folders, you'll see Google's standard file picker. Pick a book, BookHaven downloads it. To import again later, pick again.</p>
+    <p class="q">Multi-file MP3 audiobooks?</p>
+    <p>If a folder contains multiple MP3 chapters (with optional CD-1, CD-2 sub-folders, a cover image, an NFO, or a CUE sheet), BookHaven detects the layout, copies all files together, and treats the whole folder as one audiobook with chapter navigation.</p>
+
+    <h2 id="kindle">What about my Kindle library?</h2>
+    <p>Honestly: BookHaven cannot read Kindle's encrypted files directly. Amazon's DRM protects them and we have no way around that.</p>
+    <p>What people typically do is use third-party tools <em>outside</em> the App Store ecosystem to back up their personal Kindle purchases as DRM-free EPUB files, then import those into a reader of their choice (BookHaven, Apple Books, anything else). Whether and how to do that depends on your jurisdiction and personal stance — we can't guide you through it. If you already have DRM-free EPUBs of your library, the Files app or cloud import paths above will pick them up.</p>
+
+    <h2 id="audiobooks">Audiobooks</h2>
+    <p class="q">Which audiobook formats?</p>
+    <p>M4B and M4A (the same MP4 container; M4A files just use a different extension), and MP3 — either as a single file or as a folder of multiple files representing chapters. BookHaven also supports Dolby Atmos audiobooks (Enhanced AC-3 / EC-3 with JOC); on AirPods Pro / Max / HomePod / AirPlay 2 endpoints, iOS routes the spatial audio automatically.</p>
+    <p class="q">Where do chapter titles come from?</p>
+    <p>For M4B/M4A, BookHaven reads the embedded chapter track and falls back through several locale paths to find titles (some Audible-encoded files tag chapters with the <code>mis</code> locale; we walk every available locale until we find them). For MP3, we use ID3 chapter tags, the surrounding folder structure, or a CUE sheet if present.</p>
+    <p class="q">Disc-folder audiobooks (CD 1, CD 2…)?</p>
+    <p>Pick any one MP3 in any disc folder. BookHaven detects the layout, copies all discs into a single audiobook, and prefixes filenames so chapters stay in the right order across discs.</p>
+    <p class="q">My audiobook plays but I see no chapters</p>
+    <p>If the file has no embedded chapter information at all, BookHaven plays it straight through. You can still bookmark, set a sleep timer, and resume from the lock-screen.</p>
+    <p class="q">CarPlay support?</p>
+    <p>Coming after launch — not in v1.0.</p>
+
+    <h2 id="icloud-sync">iCloud sync (Beta in v1.0)</h2>
+    <p>For v1.0, iCloud sync is shipping as <strong>opt-in beta</strong> and is OFF by default. To turn it on:</p>
+    <ul>
+        <li>Open <strong>Settings &rsaquo; iCloud Sync (Beta)</strong> in the app</li>
+        <li>Toggle <strong>Sync with iCloud</strong> on</li>
+        <li>Restart BookHaven</li>
+    </ul>
+    <p>Once on, your library, bookmarks, reading progress, and shelves sync across the Apple devices signed into the same Apple ID. Your data lives in your <em>private</em> iCloud database — Apple's CloudKit — and BookHaven has no servers in this loop.</p>
+    <p>Because cross-device sync depends on each user's particular Apple ID, network conditions, and devices, v1.0 ships sync as opt-in while we gather real-world reports. If you turn it on and hit any issue (a shelf that looks empty on a second device, a bookmark that didn't travel, anything that surprises you), please mail us at <a href="mailto:bookhavensupport@gmail.com">bookhavensupport@gmail.com</a> with what you saw — that helps us flip the default on for v1.1.</p>
+    <p class="q">Can I sync ebook files (the EPUB / PDF bytes) too?</p>
+    <p>Yes — turn on <strong>Sync Ebook Files</strong> in the same panel. This is independent of the master toggle and off by default. Files under 40 MB sync via iCloud's CKAsset; larger files stay local. Audiobook files <strong>never</strong> sync via iCloud — re-import them on the other device from Dropbox, Google Drive, or OneDrive.</p>
+    <p class="q">My iCloud quota is full</p>
+    <p>BookHaven detects iCloud quota errors and shows a banner in <strong>Settings &rsaquo; iCloud Sync (Beta)</strong>. Free up iCloud space at iCloud.com or upgrade iCloud+; sync resumes automatically. The quota error only stops <em>new</em> uploads — your existing synced data stays intact.</p>
+    <p class="q">Switching Apple IDs?</p>
+    <p>Before signing out of iCloud, export a JSON snapshot of your library from <strong>Settings</strong> as a personal safety net. iCloud will warn you that signing out can affect app data; with BookHaven the local database stays on the device, but the iCloud-synced records go with the old Apple ID.</p>
+
+    <h2 id="purchases">Subscription vs premium rooms</h2>
+    <p>BookHaven has <strong>two independent kinds of purchase</strong>. People sometimes assume one buys the other; it doesn't.</p>
+    <ul>
+        <li><strong>Ad-Free Membership</strong> &mdash; a subscription. Removes ads. <em>Does not unlock premium rooms.</em></li>
+        <li><strong>Premium room purchases</strong> &mdash; a one-time purchase per room (The Tower, The Nook, Zen Garden, The Witch's Attic). Unlocks that specific haven forever. <em>Does not remove ads.</em></li>
+    </ul>
+    <p>You can have neither, one, the other, or both. The Study is free for everyone, forever. Tip jar IAPs in the Shop send a small thank-you to the developer with no functional change.</p>
+    <p class="q">Can I share my purchases with my family?</p>
+    <p>Subscription and premium rooms are enabled for Family Sharing. Tip-jar IAPs are not (they're not transferable rewards).</p>
+    <p class="q">When does the welcome gift end?</p>
+    <p>Seven days after first launch. During the gift, every haven is unlocked and ads are off. After day seven, you go back to The Study with ads (the free tier). You can subscribe or purchase rooms at any time before, during, or after the gift.</p>
+
+    <h2 id="refunds">Refunds</h2>
+    <p>App Store purchases are refunded by Apple, not by BookHaven. We don't see your payment information and don't process refunds ourselves. To request a refund:</p>
+    <ul>
+        <li>Visit <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a></li>
+        <li>Sign in with your Apple ID</li>
+        <li>Find the BookHaven purchase and tap <strong>Report a Problem</strong></li>
+    </ul>
+    <p>If your purchase didn't unlock what you expected, write to us first at <a href="mailto:bookhavensupport@gmail.com">bookhavensupport@gmail.com</a> — most "didn't unlock" issues are actually about which axis (subscription vs room IAP) does what. We're happy to clarify or guide you through a refund.</p>
+
+    <h2 id="progress">Reading progress &amp; bookmarks</h2>
+    <p>Your position in every book is saved every few seconds. When you re-open a book, you land where you left off. Bookmarks are saved per book; tap the bookmark icon in the reader's top bar to add or browse them. PDF and Web readers use page numbers; EPUB uses Readium positions.</p>
+    <p class="q">My progress is wrong on another device after iCloud sync</p>
+    <p>v1.0 uses last-write-wins for progress, not max-progress-wins. If you read on Device A to page 80 and Device B last saved page 50 (older), opening on B briefly shows page 50 until B writes its newer position. This corrects itself on the next page turn but can be confusing. We're tracking this for v1.1.</p>
+    <p class="q">My audiobook position resets</p>
+    <p>If your iPhone runs out of memory while playing in the background and iOS terminates BookHaven, the position is saved within ~15 seconds of the last progress update. In rare cases of force-quit you may lose up to 15 seconds of position. This is a deliberate trade-off to avoid writing to disk every second, which would harm SSD lifetime.</p>
+
+    <h2 id="havens">Havens, daily goals, streaks</h2>
+    <p>Your <strong>haven</strong> is the room you read in — The Study, The Tower, The Nook, Zen Garden, or The Witch's Attic. Each has its own ambient sound, particles, and color palette. Switch havens via <strong>Settings &rsaquo; Haven &amp; Atmosphere &rsaquo; Haven</strong> or the side menu's <strong>Switch Haven</strong> row. The Study is free; the other four are unlockable.</p>
+    <p>The <strong>daily goal</strong> defaults to 15 minutes and counts both reading time and listening time. The <strong>streak</strong> counts every day where you accumulate at least 5 minutes — that's the threshold for "you showed up." You can change the daily goal in Settings; the streak threshold is fixed.</p>
+    <p>The optional <strong>evening reminder</strong> sends a single notification between 6 and 9 PM if you haven't read yet that day. We don't push more than one reminder a day and we never send marketing notifications.</p>
+
+    <h2 id="accessibility">Accessibility</h2>
+    <p>BookHaven supports VoiceOver, Dynamic Type, the system's Reduce Motion and Reduce Transparency preferences, and the Large Content Viewer for icon-only buttons. Reading-text font and size are user-adjustable per book in the reader's settings panel.</p>
+    <p>If you find a place where accessibility is broken — a control that VoiceOver can't reach, text that doesn't scale, contrast that's hard to read — please write to <a href="mailto:bookhavensupport@gmail.com">bookhavensupport@gmail.com</a> with what you experienced. We treat accessibility regressions as bugs.</p>
+
+    <h2 id="reset">Resetting or removing data</h2>
+    <p class="q">Replay onboarding</p>
+    <p><strong>Settings &rsaquo; About &rsaquo; Replay Onboarding.</strong> Walks you through the welcome screens again without losing your library.</p>
+    <p class="q">Reset coach marks</p>
+    <p><strong>Settings &rsaquo; About &rsaquo; Reset Coach Marks</strong> brings back the haven tour and library tour on next launch. <strong>Reset Audiobook Player Tip</strong> brings back the audiobook player coach marks on next open.</p>
+    <p class="q">Remove ebook files synced to iCloud</p>
+    <p><strong>Settings &rsaquo; iCloud Sync (Beta) &rsaquo; Remove Synced Files from iCloud</strong> deletes the file bytes from iCloud (and other devices via sync) while keeping local files, metadata, bookmarks, and progress untouched.</p>
+    <p class="q">Reset everything</p>
+    <p>Delete BookHaven from your device. iOS will ask whether you also want to delete its iCloud data (if iCloud sync was on). On a fresh install, BookHaven starts clean.</p>
+    <p class="q">Export a snapshot</p>
+    <p>If you're about to switch Apple IDs and want a safety net, the JSON snapshot Settings can export covers your library, shelves, bookmarks, progress, and covers — but does not include the ebook file bytes themselves. Useful as reference; the file is yours, store it wherever you keep your other backups.</p>
+
+    <h2 id="privacy-summary">Privacy &amp; what we collect</h2>
+    <p>The full policy lives at <a href="https://hcyalcin.github.io/bookhaven-privacy/">hcyalcin.github.io/bookhaven-privacy</a>. The short version:</p>
+    <ul>
+        <li>BookHaven has <strong>no servers</strong>. Your library, progress, bookmarks, and stats live on your device.</li>
+        <li>iCloud sync is private to your Apple ID. Apple sees the encrypted blobs; BookHaven does not.</li>
+        <li>The free tier shows ads via Google AdMob. AdMob receives device type, IP, country, and an optional Apple-managed identifier (only if you allow tracking via the iOS ATT dialog). AdMob never receives your reading history, library contents, or any in-app behavior.</li>
+        <li>No analytics, no behavioral tracking, no account required.</li>
+    </ul>
+
+    <h2 id="contact">Contacting support</h2>
+    <p>Mail <a href="mailto:bookhavensupport@gmail.com">bookhavensupport@gmail.com</a>. We aim to reply within five business days. Including the following details helps us help you faster:</p>
+    <ul>
+        <li>What you were trying to do</li>
+        <li>What happened instead</li>
+        <li>Your device model and iOS version (Settings &rsaquo; General &rsaquo; About)</li>
+        <li>BookHaven version (Settings &rsaquo; About &rsaquo; Version)</li>
+        <li>If a particular file caused the issue: the format (EPUB, PDF, etc.) and where it came from (publisher, Standard Ebooks, Project Gutenberg, etc.)</li>
+    </ul>
+    <p>For app questions in your own words, the inbox is the right place. For privacy questions, that same address works — every email reaches the same person (the developer).</p>
+
+    <div class="footer">
+        <p>BookHaven &mdash; A private reading sanctuary.</p>
+    </div>
+</main>
+</body>
+</html>
