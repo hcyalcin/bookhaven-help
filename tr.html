@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BookHaven — Yardım ve SSS</title>
+<title>BookHaven Yardım ve SSS</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
@@ -89,6 +89,7 @@
     margin: 0 0 2.5rem;
   }
 
+  /* Karşılama plakası — gizlilik sayfasının "Bir Söz" kutusuyla aynı biçim */
   .highlight {
     position: relative;
     margin: 2rem 0 3rem;
@@ -135,6 +136,7 @@
     color: var(--cream);
   }
 
+  /* İçindekiler — bölüm bağlantıları */
   .toc {
     margin: 2rem 0 2.5rem;
     padding: 1.25rem 1.5rem;
@@ -201,6 +203,7 @@
   h2:nth-of-type(3n+2)::before { background: var(--oxblood); }
   h2:nth-of-type(3n+3)::before { background: var(--teal); }
 
+  /* Soru-cevap stili */
   .q {
     font-family: 'Cormorant Garamond', Georgia, serif;
     font-weight: 600;
@@ -254,6 +257,7 @@
     border-bottom-color: var(--brass-dark);
   }
 
+  /* Format tablosu */
   .formats {
     margin: 0.5rem 0 1.4rem;
     border-collapse: collapse;
@@ -275,6 +279,8 @@
     color: var(--brass-deep);
     font-size: 0.85rem;
     border-bottom: 1px solid var(--rule);
+    white-space: nowrap;
+    vertical-align: top;
   }
 
   .formats code {
@@ -328,10 +334,10 @@
     <div class="ornament" aria-hidden="true"></div>
 
     <h1>Yardım ve SSS</h1>
-    <p class="updated">BookHaven 1.0 için &middot; Son güncelleme: 4 Mayıs 2026 &middot; <a href="index.html">English</a></p>
+    <p class="updated">BookHaven 1.0 için &middot; Son güncelleme: 3 Temmuz 2026 &middot; <a href="index.html">English</a></p>
 
     <div class="highlight">
-        <p><strong>BookHaven, halihazırda sahip olduğun kitapları okur.</strong> Aşağıdaki sorular en sık karşılaşılanlardır. Seninkini göremiyorsan, <a href="mailto:bookhavensupport@gmail.com" style="color: var(--cream); border-bottom-color: var(--brass);">bookhavensupport@gmail.com</a> adresine yaz.</p>
+        <p><strong>BookHaven, halihazırda sahip olduğun kitapları okur.</strong> Aşağıdaki sorular en sık karşılaşılanlar. Seninkini göremiyorsan <a href="mailto:bookhavensupport@gmail.com" style="color: var(--cream); border-bottom-color: var(--brass);">bookhavensupport@gmail.com</a> adresine yaz.</p>
     </div>
 
     <div class="toc" aria-label="İçindekiler">
@@ -339,10 +345,12 @@
         <ol>
             <li><a href="#adding">Kitap eklemek</a></li>
             <li><a href="#formats">Desteklenen formatlar</a></li>
-            <li><a href="#kindle">Kindle kitaplarım?</a></li>
+            <li><a href="#kindle">Kindle veya Audible kitapları?</a></li>
+            <li><a href="#reading">Okuma</a></li>
             <li><a href="#audiobooks">Sesli kitaplar</a></li>
+            <li><a href="#badge">Kapaktaki bulut rozeti</a></li>
             <li><a href="#icloud">iCloud senkronizasyonu (Beta)</a></li>
-            <li><a href="#purchases">Abonelik ile premium köşeler</a></li>
+            <li><a href="#purchases">Reklamlar, üyelik, köşeler ve hediyeler</a></li>
             <li><a href="#refunds">İadeler</a></li>
             <li><a href="#privacy">Gizlilik</a></li>
             <li><a href="#contact">İletişim</a></li>
@@ -351,49 +359,85 @@
 
     <h2 id="adding">Kitap eklemek</h2>
     <ul>
-        <li><strong>Dosyalar / iCloud Drive:</strong> <strong>Paylaş &rsaquo; BookHaven</strong>'a dokun ya da BookHaven'ı aç ve <strong>+</strong>'ya bas.</li>
-        <li>Başka bir cihazdan <strong>AirDrop</strong> — hedef olarak BookHaven'ı seç.</li>
-        <li><strong>Bulut servisleri</strong> (Dropbox, Google Drive, OneDrive): <strong>Ayarlar &rsaquo; Bulut Hesapları</strong>'ndan bağlan, sonra göz at ve içe aktar.</li>
-        <li><strong>E-posta veya Safari indirmeleri:</strong> eki aç, <strong>Paylaş &rsaquo; BookHaven</strong>.</li>
+        <li><strong>Uygulama içinden:</strong> köşenin üst kısmındaki <strong>+</strong> düğmesine dokun ya da yan menüden <strong>Kitap İçe Aktar</strong>'ı seç. <strong>Bu Cihazdan</strong> ile Dosyalar seçicisi açılır: iCloud Drive, cihaz depolaması ve Dosyalar uygulamasının görebildiği her şey.</li>
+        <li><strong>Başka bir uygulamadan:</strong> herhangi bir kitap dosyasını <strong>BookHaven</strong>'a paylaş. AirDrop, Mail ekleri, Safari indirmeleri ve Dosyalar uygulaması bu yolla çalışır.</li>
+        <li><strong>Bulutundan:</strong> Dropbox, Google Drive veya OneDrive'ı <strong>Ayarlar &rsaquo; Bulut Hesapları</strong> bölümünden bir kez bağla. Sonrasında içe aktarma menüsü o hizmete doğrudan göz atmayı önerir.</li>
+        <li><strong>Klasörler ve zip'ler:</strong> ikisi de tek seferde içe aktarılır. MP3 veya M4A bölüm dosyalarından oluşan bir klasör, disk düzenleri (CD 1, CD 2) dahil, tek bir sesli kitaba dönüşür.</li>
+        <li><strong>Rafın hiç boş kalmasın diye</strong> yedi açık lisans klasik yüklü gelir; <strong>Keşfet</strong> de seni ücretsiz, DRM'siz kitap ve sesli kitapların güvenilir kaynaklarına yönlendirir.</li>
     </ul>
 
     <h2 id="formats">Desteklenen formatlar</h2>
-    <p>E-kitaplar için EPUB, PDF, MOBI, AZW3, FB2, TXT, RTF. Sesli kitaplar için M4B, M4A, MP3. <em>DRM korumalı dosyalar çalışmaz</em> — Kindle, Audible ve DRM'li Apple Books dosyalarının önce DRM'siz olması gerekir.</p>
+    <table class="formats">
+        <tr>
+            <th>E-kitaplar</th>
+            <td><code>EPUB</code> &middot; <code>KEPUB</code> &middot; <code>PDF</code> &middot; <code>MOBI</code> &middot; <code>AZW3</code> &middot; <code>FB2</code> &middot; <code>TXT</code> &middot; <code>RTF</code></td>
+        </tr>
+        <tr>
+            <th>Sesli kitaplar</th>
+            <td><code>M4B</code> &middot; <code>M4A</code> &middot; <code>MP3</code>, tek dosya olarak ya da MP3/M4A bölüm klasörleri halinde</td>
+        </tr>
+    </table>
+    <p><em>DRM korumalı dosyalar açılmaz.</em> BookHaven yalnızca DRM'siz dosyaları okur.</p>
 
-    <h2 id="kindle">Kindle kitaplarım?</h2>
-    <p>Amazon'un DRM'si nedeniyle BookHaven, Kindle dosyalarını doğrudan okuyamaz. Sahip olduğun kitapların DRM'siz EPUB'ları varsa, yukarıdaki yöntemlerle onları içe aktarabilirsin.</p>
+    <h2 id="kindle">Kindle veya Audible kitapları?</h2>
+    <p>Amazon'un DRM'si nedeniyle BookHaven, Kindle veya Audible dosyalarını doğrudan okuyamaz. Sahip olduğun kitapların DRM'siz kopyaları (e-kitap için EPUB, ses için MP3 ya da M4B) yukarıdaki yöntemlerle sorunsuz içe aktarılır.</p>
+
+    <h2 id="reading">Okuma</h2>
+    <ul>
+        <li>Kaldığın yer her formatta kendiliğinden kaydedilir. Üst bardaki ayraç düğmesi sayfayı işaretler; kayıtlı bir ayraca dokunmak seni o sayfaya götürür ve pasajı kısaca vurgular.</li>
+        <li><strong>Aa</strong> paneli okuma temasını (Açık, Sepya ve sıcak Koyu), on yazı tipinden birini, metin boyutunu, satır aralığını ve hizalamayı ayarlar. Kitabın özgün görünümünü mü tercih ediyorsun? Aynı panelden yayıncı varsayılanlarına dönebilirsin.</li>
+        <li>PDF'lerde ayrıca yakınlaştırma, belge içi arama ve gerçek bir karanlık mod var.</li>
+        <li>Açtığın ilk kitap, okuyucu kontrollerini kısa bir turla tanıtır. Turu ve diğer tüm ipuçlarını <strong>Ayarlar &rsaquo; Tüm İpuçlarını Yeniden Göster</strong> ile yeniden izleyebilirsin.</li>
+    </ul>
 
     <h2 id="audiobooks">Sesli kitaplar</h2>
-    <p>M4B, M4A, MP3 — tek dosyalar ya da bölüm klasörleri (CD 1, CD 2 gibi disk-klasör düzenleri dahil). Dolby Atmos, AirPods Pro/Max ve HomePod'da mekânsal sesle çalar. CarPlay desteği lansmandan sonra geliyor.</p>
+    <ul>
+        <li>Tek dosyalar olduğu gibi çalar; MP3 veya M4A bölümlerden oluşan bir klasör, bölümleri sırasıyla tek bir sesli kitap olarak içe aktarılır.</li>
+        <li>Oynatıcıda bölümler arası gezinme, ayraçlar, uyku zamanlayıcısı ve kitap başına oynatma hızı var.</li>
+        <li>Oynatma kilit ekranında tam kontrollerle sürer; kulaklık düğmeleri de çalışır.</li>
+        <li>Uzamsal Ses kitaplar yerel olarak çalınır ve destekleyen kulaklıklar ile hoparlörlere yönlendirilir.</li>
+    </ul>
+
+    <h2 id="badge">Kapaktaki bulut rozeti</h2>
+    <ul>
+        <li><strong>İndirme oklu</strong> bulut rozeti, kitabın kaydının bu cihazda olduğunu ama dosyasının olmadığını gösterir. iCloud senkronizasyonu kitaplığını yeni bir cihaza getirdiğinde bu olağandır. Kitaba dokun; BookHaven dosyayı geldiği bulut hizmetinden getirir.</li>
+        <li><strong>Ünlem işaretli</strong> bulut rozeti, özgün dosyanın bulut hesabında taşınmış ya da silinmiş göründüğünü söyler. Kitaba dokunarak yeniden bağlanabilir veya dosyayı yeniden seçebilirsin.</li>
+    </ul>
 
     <h2 id="icloud">iCloud senkronizasyonu (Beta)</h2>
-    <p>v1.0'da varsayılan olarak kapalı. <strong>Ayarlar &rsaquo; iCloud Senkronizasyonu (Beta)</strong> bölümünden açarak kütüphaneni, yer imlerini ve ilerlemeni Apple cihazların arasında paylaşabilirsin. Sesli kitap dosyaları senkronize olmaz — diğer cihazda bulut servisinden tekrar içe aktar.</p>
-
-    <h2 id="purchases">Abonelik ile premium köşeler</h2>
-    <p>İki bağımsız satın alma türü — birini almak diğerini almaz:</p>
     <ul>
-        <li><strong>Reklamsız Üyelik</strong> &mdash; abonelik, reklamları kaldırır. Köşe açmaz.</li>
-        <li><strong>Premium köşe satın almaları</strong> &mdash; köşe başına tek seferlik (Kule, Kış Köşesi, Zen Bahçesi, Cadının Çatı Katı). O köşeyi açar. Reklam kaldırmaz.</li>
+        <li>v1.0'da varsayılan olarak kapalı. <strong>Ayarlar &rsaquo; iCloud Senkronizasyonu (Beta)</strong> bölümünden aç; değişiklik BookHaven'ın bir sonraki açılışında devreye girer. Her cihazda aynı Apple ID'yi kullan.</li>
+        <li>Senkronize olanlar: kitaplığın, ayraçların, okuma ilerlemen, rafların ve okuma tercihlerin.</li>
+        <li>E-kitap <em>dosyaları</em> ayrı, isteğe bağlı bir anahtardır (<strong>E-Kitap Dosyalarını Senkronize Et</strong>). Çok büyük dosyalar (yaklaşık 40 MB üzeri) atlanır ve kitabın üzerinde belirtilir; onlar için en iyi ev bir bulut sürücüsüdür.</li>
+        <li><strong>Sesli kitap dosyaları iCloud üzerinden asla senkronize olmaz.</strong> Cihazlar arasında taşımak için Dropbox, Google Drive veya OneDrive'dan içe aktar.</li>
     </ul>
-    <p>Kütüphane sonsuza dek ücretsiz. Yeni kullanıcılar 7 günlük hoş geldin hediyesi alır: her köşe açık + reklam kapalı.</p>
+
+    <h2 id="purchases">Reklamlar, üyelik, köşeler ve hediyeler</h2>
+    <p>BookHaven ücretsizdir ve okumak her zaman ücretsizdir. Ücretsiz kullanım reklam gösterir: Keşfet ve İstatistikler ekranlarında küçük banner'lar ve kitap açmak gibi doğal duraklarda ara sıra tam ekran bir reklam. Reklamlar okumayı, dinlemeyi veya köşeni asla bölmez. Banner ayrıca reklamsız süre kazandıran kısa, isteğe bağlı bir video da sunar.</p>
+    <p>İki satın alma vardır ve birbirinden bağımsızdır. Birini almak diğerini almaz:</p>
+    <ul>
+        <li><strong>Reklamsız Üyelik</strong>: reklamları kaldıran aylık ya da yıllık bir abonelik. Köşe açmaz.</li>
+        <li><strong>Premium köşeler</strong>: tek seferlik satın almalar (Kule, Kış Köşesi, Zen Bahçesi, Cadının Çatı Katı). O köşeyi sonsuza dek açar. Reklam kaldırmaz.</li>
+    </ul>
+    <p>Kütüphane köşesi sonsuza dek ücretsiz. Yeni kullanıcılar her köşenin reklamsız 7 günlük hoş geldin hediyesini alır. Mağaza'nın <strong>Geliştiriciyi Destekle</strong> bölümündeki hediyeler (Bana Bir Kitap, Raf ya da Kütüphane Hediye Et) yalnızca birer teşekkürdür: bilerek hiçbir şeyin kilidini açmazlar.</p>
+    <p>Başka bir cihazda mı satın aldın, ya da uygulamayı yeniden mi yükledin? Mağaza'daki <strong>Satın Almaları Geri Yükle</strong>'ye dokun. Üyelik, Apple ID aboneliklerinden istediğin zaman yönetilebilir ya da iptal edilebilir.</p>
 
     <h2 id="refunds">İadeler</h2>
-    <p>App Store iadeleri Apple tarafından <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a> üzerinden yapılır. Bir satın alımın beklediğini açmadıysa önce bize yaz — çoğu "açmadı" sorunu hangi eksenin (abonelik mi köşe mi) ne yaptığıyla ilgilidir.</p>
+    <p>App Store ödemeleri Apple'a aittir; iadeler <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a> adresinden Apple tarafından yapılır. Bir satın alma beklediğini açmadıysa önce <a href="mailto:bookhavensupport@gmail.com">bookhavensupport@gmail.com</a> adresine yaz: çoğu "açılmadı" karışıklığı hangi satın almanın ne yaptığıyla ilgilidir (üyelik reklamları kaldırır; köşe satın alması o köşeyi açar).</p>
 
     <h2 id="privacy">Gizlilik</h2>
     <ul>
-        <li>Sunucumuz yok. Kütüphanen ve ilerlemen cihazında yaşar.</li>
-        <li>iCloud senkronizasyonu Apple ID'ne özeldir. Biz görmüyoruz.</li>
-        <li>Ücretsiz katmanın reklamları Google AdMob tarafından sunulur. AdMob, okuma verilerini almaz.</li>
-        <li>Analitik yok, davranışsal izleme yok, hesap gerekmez.</li>
+        <li>Hesap yok, giriş yok, okumalarının analitiği yok. BookHaven'ın sunucusu yoktur; kitaplığın, ilerlemen ve istatistiklerin cihazında yaşar.</li>
+        <li>iCloud senkronizasyonunu açarsan veriler senin özel iCloud'un üzerinden akar. Yalnızca senin Apple ID'n erişebilir.</li>
+        <li>Ücretsiz kullanımın reklamları Google AdMob'dan gelir. Kitapların ve okuma alışkanlıkların bunun dışında kalır; iOS izleme sorusuna verdiğin yanıta saygı gösterilir.</li>
     </ul>
     <p>Tam politika: <a href="https://hcyalcin.github.io/bookhaven-privacy/tr.html">hcyalcin.github.io/bookhaven-privacy/tr.html</a></p>
 
     <h2 id="contact">İletişim</h2>
-    <p><a href="mailto:bookhavensupport@gmail.com">bookhavensupport@gmail.com</a> adresine yaz. Cihaz modelin, iOS sürümün ve BookHaven sürümünü eklersen daha hızlı yardımcı oluruz.</p>
+    <p><a href="mailto:bookhavensupport@gmail.com">bookhavensupport@gmail.com</a> adresine yaz. Cihaz modelini, iOS sürümünü ve sorun yaşadığında ne yapıyor olduğunu ekle: ayrıntı, hızlı ve isabetli bir yanıt demektir.</p>
 
     <div class="footer">
-        <p>BookHaven &mdash; Özel bir okuma sığınağı.</p>
+        <p>BookHaven &middot; Sana özel bir okuma köşesi.</p>
     </div>
 </main>
 </body>

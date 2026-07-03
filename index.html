@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BookHaven — Help &amp; FAQ</title>
+<title>BookHaven Help &amp; FAQ</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
@@ -279,6 +279,8 @@
     color: var(--brass-deep);
     font-size: 0.85rem;
     border-bottom: 1px solid var(--rule);
+    white-space: nowrap;
+    vertical-align: top;
   }
 
   .formats code {
@@ -332,7 +334,7 @@
     <div class="ornament" aria-hidden="true"></div>
 
     <h1>Help &amp; FAQ</h1>
-    <p class="updated">For BookHaven 1.0 &middot; Last updated: May 4, 2026 &middot; <a href="tr.html">Türkçe</a></p>
+    <p class="updated">For BookHaven 1.0 &middot; Last updated: July 3, 2026 &middot; <a href="tr.html">Türkçe</a></p>
 
     <div class="highlight">
         <p><strong>BookHaven reads books you already own.</strong> The questions below cover what comes up most. Don't see yours? Write to <a href="mailto:bookhavensupport@gmail.com" style="color: var(--cream); border-bottom-color: var(--brass);">bookhavensupport@gmail.com</a>.</p>
@@ -343,10 +345,12 @@
         <ol>
             <li><a href="#adding">Adding books</a></li>
             <li><a href="#formats">Supported formats</a></li>
-            <li><a href="#kindle">Kindle books?</a></li>
+            <li><a href="#kindle">Kindle or Audible books?</a></li>
+            <li><a href="#reading">Reading</a></li>
             <li><a href="#audiobooks">Audiobooks</a></li>
+            <li><a href="#badge">The cloud badge on a cover</a></li>
             <li><a href="#icloud">iCloud sync (Beta)</a></li>
-            <li><a href="#purchases">Subscription vs premium rooms</a></li>
+            <li><a href="#purchases">Ads, membership, havens &amp; tips</a></li>
             <li><a href="#refunds">Refunds</a></li>
             <li><a href="#privacy">Privacy</a></li>
             <li><a href="#contact">Contact</a></li>
@@ -355,49 +359,85 @@
 
     <h2 id="adding">Adding books</h2>
     <ul>
-        <li><strong>Files / iCloud Drive:</strong> tap <strong>Share &rsaquo; BookHaven</strong>, or open BookHaven and tap <strong>+</strong>.</li>
-        <li><strong>AirDrop</strong> from another device — pick BookHaven as the destination.</li>
-        <li><strong>Cloud services</strong> (Dropbox, Google Drive, OneDrive): connect via <strong>Settings &rsaquo; Cloud Accounts</strong>, then browse and import.</li>
-        <li><strong>Email or Safari downloads:</strong> open the attachment, <strong>Share &rsaquo; BookHaven</strong>.</li>
+        <li><strong>In the app:</strong> tap the <strong>+</strong> button at the top of your haven, or open the side menu and choose <strong>Import Books</strong>. Pick <strong>From This Device</strong> to browse the Files picker: iCloud Drive, on-device storage, and anything else the Files app can see.</li>
+        <li><strong>From another app:</strong> share any book file to <strong>BookHaven</strong>. AirDrop, Mail attachments, Safari downloads, and the Files app all work this way.</li>
+        <li><strong>From your cloud:</strong> connect Dropbox, Google Drive, or OneDrive once under <strong>Settings &rsaquo; Cloud Accounts</strong>. After that, the import menu offers to browse that service directly.</li>
+        <li><strong>Folders and zips:</strong> both import in one go. A folder of MP3 or M4A chapter files becomes a single audiobook, disc layouts (CD 1, CD 2) included.</li>
+        <li><strong>Never empty:</strong> seven public-domain classics come bundled, and <strong>Discover</strong> points to trusted sources of free, DRM-free books and audiobooks.</li>
     </ul>
 
     <h2 id="formats">Supported formats</h2>
-    <p>EPUB, PDF, MOBI, AZW3, FB2, TXT, RTF for ebooks. M4B, M4A, MP3 for audiobooks. <em>DRM-protected files don't work</em> — Kindle, Audible, and DRM'd Apple Books need to be DRM-free first.</p>
+    <table class="formats">
+        <tr>
+            <th>Ebooks</th>
+            <td><code>EPUB</code> &middot; <code>KEPUB</code> &middot; <code>PDF</code> &middot; <code>MOBI</code> &middot; <code>AZW3</code> &middot; <code>FB2</code> &middot; <code>TXT</code> &middot; <code>RTF</code></td>
+        </tr>
+        <tr>
+            <th>Audiobooks</th>
+            <td><code>M4B</code> &middot; <code>M4A</code> &middot; <code>MP3</code>, as single files or as folders of MP3/M4A chapters</td>
+        </tr>
+    </table>
+    <p><em>DRM-protected files don't open.</em> BookHaven reads DRM-free files only.</p>
 
-    <h2 id="kindle">My Kindle books?</h2>
-    <p>Amazon's DRM means BookHaven can't read Kindle files directly. If you've got DRM-free EPUBs of books you own, drop them in via the methods above.</p>
+    <h2 id="kindle">Kindle or Audible books?</h2>
+    <p>Amazon's DRM means BookHaven can't read Kindle or Audible files directly. DRM-free copies of books you own (EPUB for ebooks, MP3 or M4B for audio) import fine through any of the methods above.</p>
+
+    <h2 id="reading">Reading</h2>
+    <ul>
+        <li>Your place is saved automatically, in every format. The bookmark button in the top bar marks pages; tapping a saved bookmark jumps back and briefly highlights the passage.</li>
+        <li>The <strong>Aa</strong> panel sets the reading theme (Light, Sepia, and a warm Dark), one of ten fonts, text size, spacing, and alignment. Prefer the book's original look? Reset to the publisher's own styling from the same panel.</li>
+        <li>PDFs add pinch-zoom, in-document search, and a true dark mode.</li>
+        <li>The first book you open shows a short tour of the reader controls. Replay it, and every other tip, from <strong>Settings &rsaquo; Show All Tips Again</strong>.</li>
+    </ul>
 
     <h2 id="audiobooks">Audiobooks</h2>
-    <p>M4B, M4A, MP3 — single files or folders of chapters (including disc-folder layouts like CD 1, CD 2). Dolby Atmos plays in spatial audio on AirPods Pro/Max and HomePod. CarPlay support comes after launch.</p>
+    <ul>
+        <li>Single files play as they are; a folder of MP3 or M4A chapters imports as one audiobook with its chapters in order.</li>
+        <li>The player has chapter navigation, bookmarks, a sleep timer, and per-book playback speed.</li>
+        <li>Playback continues on the lock screen with full controls, and headphone buttons work.</li>
+        <li>Spatial Audio titles play natively and route to supported headphones and speakers.</li>
+    </ul>
+
+    <h2 id="badge">The cloud badge on a cover</h2>
+    <ul>
+        <li>A cloud badge with a <strong>download arrow</strong> means the book's record is on this device but its file isn't. That's normal after iCloud sync brings your library to a new device. Tap the book and BookHaven fetches the file from the cloud service it came from.</li>
+        <li>A cloud badge with an <strong>exclamation mark</strong> means the original file seems to have moved or been deleted in your cloud account. Tap the book to reconnect or pick the file again.</li>
+    </ul>
 
     <h2 id="icloud">iCloud sync (Beta)</h2>
-    <p>Off by default in v1.0. Turn it on in <strong>Settings &rsaquo; iCloud Sync (Beta)</strong> to share library, bookmarks, and progress across your Apple devices. Audiobook files don't sync — re-import them from cloud services on the other device.</p>
-
-    <h2 id="purchases">Subscription vs premium rooms</h2>
-    <p>Two independent purchase types — buying one does NOT buy the other:</p>
     <ul>
-        <li><strong>Ad-Free Membership</strong> &mdash; subscription that removes ads. Doesn't unlock rooms.</li>
-        <li><strong>Premium room purchases</strong> &mdash; one-time per room (Tower, Nook, Zen Garden, Witch's Attic). Unlocks the room. Doesn't remove ads.</li>
+        <li>Off by default in v1.0. Turn it on under <strong>Settings &rsaquo; iCloud Sync (Beta)</strong>; the change takes effect the next time BookHaven launches. Use the same Apple ID on every device.</li>
+        <li>What syncs: your library, bookmarks, reading progress, shelves, and reading preferences.</li>
+        <li>Ebook <em>files</em> are a separate, optional toggle (<strong>Sync Ebook Files</strong>). Very large files, roughly over 40 MB, are skipped and marked on the book; a cloud drive is the better home for those.</li>
+        <li><strong>Audiobook files never sync through iCloud.</strong> Import them from Dropbox, Google Drive, or OneDrive to carry them across devices.</li>
     </ul>
-    <p>The Study is free forever. New users get a 7-day welcome gift: every haven unlocked + ads off.</p>
+
+    <h2 id="purchases">Ads, membership, havens &amp; tips</h2>
+    <p>BookHaven is free, and reading is always free. The free tier shows ads: small banners on the Discover and Stats screens, and an occasional full-screen ad at natural pauses, like opening a book. Ads never interrupt reading, listening, or your haven. The banner also offers a short optional video that earns ad-free time.</p>
+    <p>Two purchases exist, and they're independent. Buying one does <strong>not</strong> buy the other:</p>
+    <ul>
+        <li><strong>Ad-Free Membership</strong>: a monthly or annual subscription that removes ads. It doesn't unlock havens.</li>
+        <li><strong>Premium havens</strong>: one-time purchases (The Tower, The Nook, Zen Garden, The Witch's Attic) that unlock that haven forever. They don't remove ads.</li>
+    </ul>
+    <p>The Study is free forever. New users get a 7-day welcome gift of every haven, ad-free. <strong>Tips</strong> in the Shop (Buy Me a Book, a Shelf, a Library) are pure thank-yous: they unlock nothing, by design.</p>
+    <p>Bought something on another device, or reinstalled? Tap <strong>Restore Purchases</strong> in the Shop. The membership can be managed or cancelled anytime through your Apple ID's Subscriptions.</p>
 
     <h2 id="refunds">Refunds</h2>
-    <p>App Store refunds are handled by Apple at <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>. If a purchase didn't unlock what you expected, write to us first — most "didn't unlock" confusion is about which axis (subscription vs room) does what.</p>
+    <p>App Store payments belong to Apple, so refunds are handled at <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>. If a purchase didn't unlock what you expected, write to <a href="mailto:bookhavensupport@gmail.com">bookhavensupport@gmail.com</a> first: most "didn't unlock" confusion is about which purchase does what (the membership removes ads; a haven purchase unlocks that haven).</p>
 
     <h2 id="privacy">Privacy</h2>
     <ul>
-        <li>No servers. Your library and progress live on your device.</li>
-        <li>iCloud sync is private to your Apple ID. We don't see it.</li>
-        <li>Free-tier ads come from Google AdMob. AdMob doesn't receive your reading data.</li>
-        <li>No analytics, no behavioral tracking, no account.</li>
+        <li>No account, no sign-in, and no analytics of your reading. BookHaven has no servers; your library, progress, and stats live on your device.</li>
+        <li>iCloud sync, when you turn it on, runs through your private iCloud. Only your Apple ID can reach it.</li>
+        <li>Free-tier ads come from Google AdMob. Your books and reading habits stay out of it, and your answer to the iOS tracking prompt is respected.</li>
     </ul>
     <p>Full policy: <a href="https://hcyalcin.github.io/bookhaven-privacy/">hcyalcin.github.io/bookhaven-privacy</a></p>
 
     <h2 id="contact">Contact</h2>
-    <p>Mail <a href="mailto:bookhavensupport@gmail.com">bookhavensupport@gmail.com</a>. Including your device model, iOS version, and BookHaven version helps us help you faster.</p>
+    <p>Write to <a href="mailto:bookhavensupport@gmail.com">bookhavensupport@gmail.com</a>. Include your device model, iOS version, and what you were doing when things went sideways: detail makes for a quick, specific reply.</p>
 
     <div class="footer">
-        <p>BookHaven &mdash; A private reading sanctuary.</p>
+        <p>BookHaven &middot; A private reading sanctuary.</p>
     </div>
 </main>
 </body>
